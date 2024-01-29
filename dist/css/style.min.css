@@ -4180,31 +4180,31 @@ font-weight:400;
 
 @font-face {
 font-family: '1';
-src:url(/wp-content/themes/oceanwp-child/fonts/tt0003m_.ttf);
+src:url(../fonts/tt0003m_.ttf);
 font-weight:500;
 }
 
 @font-face {
 font-family: '2';
-src:url(/wp-content/themes/oceanwp-child/fonts/tt0004m_.ttf);
+src:url(../fonts/tt0004m_.ttf);
 font-weight:500;
 }
 
 @font-face {
 font-family: '1';
-src:url(/wp-content/themes/oceanwp-child/fonts/tt0005m_.ttf);
+src:url(../fonts/tt0005m_.ttf);
 font-weight:600;
 }
 
 @font-face {
 font-family: '1';
-src:url(/wp-content/themes/oceanwp-child/fonts/tt0005m_.ttf);
+src:url(../fonts/tt0005m_.ttf);
 font-weight:700;
 }
 
 @font-face {
 font-family: '4';
-src:url(/wp-content/themes/oceanwp-child/fonts/tt0006m_.ttf);
+src:url(../fonts/tt0006m_.ttf);
 font-weight:600;
 }
 
