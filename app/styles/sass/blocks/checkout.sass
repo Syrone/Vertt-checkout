@@ -143,7 +143,7 @@
 	transition: max-height 600ms ease-in-out
 
 //** (Start) First Content First Step **//
-.checkout-signin
+.checkout-form
 	display: flex
 	flex-wrap: wrap
 	gap: 24px 48px
@@ -151,9 +151,21 @@
 	& > *
 		flex: 0 0 calc( 50% - 24px )
 
+	& > .checkout-step-hint,
 	& > .checkout-step-end
 		width: 100%
 		flex-basis: 100%
+
+	& > .checkout-step-hint
+		display: flex
+		flex-direction: column
+		gap: 24px
+
+		.hint
+			font-size: 9px
+			color: var(--gray-color)
+
+	& > .checkout-step-end
 		align-items: center
 		gap: 24px 48px
 
@@ -303,7 +315,7 @@
 		& > .container
 			gap: 40px
 
-	.checkout-signin
+	.checkout-form
 		gap: 24px
 
 		& > *
@@ -324,7 +336,7 @@
 			padding-left: 16px
 			padding-right: 16px
 
-	.checkout-signin
+	.checkout-form
 
 		& > *
 			flex-basis: 100%
@@ -341,7 +353,7 @@
 		& > .container
 			grid-template-columns: 1fr
 
-	.checkout-signin
+	.checkout-form
 
 		& > *
 			flex-basis: calc( 50% - 12px )
@@ -353,7 +365,7 @@
 
 @media (max-width: 576px)
 
-	.checkout-signin
+	.checkout-form
 
 		& > *
 			flex-basis: 100%
