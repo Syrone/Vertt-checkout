@@ -1,0 +1,688 @@
+<!--#set var="title" value="Checkout" -->
+<!--#include virtual="/parts/head.html" -->
+<div class="page">
+	<!--#include virtual="/parts/header.html" -->
+
+	<main class="main">
+
+		<h1 class="visible-hidden">
+			Checkout
+		</h1>
+
+		<div class="checkout">
+			<div class="container wr">
+				<div class="checkout-inner">
+					<div class="checkout-step" data-checkout-collapse="true">
+						<span class="checkout-step-current">
+							1
+						</span>
+						<div class="checkout-step-inner">
+							<h2 class="checkout-title">
+								Contact information
+							</h2>
+							<div class="checkout-step-content" data-step-collapse="true">
+								<div class="checkout-subtitle">
+									<p>
+										Please enter your information to continue as a new client or sing in to your personal account.
+									</p>
+									<span class="required">
+										*Required fields
+									</span>
+								</div>
+								<form class="checkout-signin">
+									<div class="checkout-signin-start">
+										<input type="email" name="email" class="field" placeholder="Enter your email *" required>
+										<input type="password" name="password" class="field" placeholder="Enter password *" required>
+	
+										<div class="checkout-step-end">
+											<label class="checkbox-label">
+												<input type="checkbox" name="checkbox" class="checkbox">
+												<span class="checkbox-label-text">Remember Me</span>
+											</label>
+
+											<span class="hint">
+												Forgot your <a href="#" class="btn btn-link">password</a>?
+											</span>
+										</div>
+									</div>
+								
+									<div class="checkout-signin-end">
+										<button type="submit" class="btn btn-primary">
+											Sign in
+										</button>
+										<button type="button" class="btn btn-apple">
+											<span class="icon">
+												<svg>
+													<use xlink:href="./images/icons/apple.svg#svg-apple"></use>
+												</svg>
+											</span>
+											Sign in with Apple
+										</button>
+
+										<div class="checkout-step-end">
+											<span class="hint">
+												No <a href="#" class="btn btn-link">account</a> yet?
+											</span>
+										</div>
+									</div>
+								</form>
+							</div>
+
+							<div class="checkout-step-content" data-step-collapse="true">
+								<div class="checkout-subtitle">
+									<p>
+										Helo, you are now logged in as <span>alex@gmail.com</span>
+									</p>
+									<span class="required">
+										*Required fields
+									</span>
+								</div>
+								<form class="checkout-signin">
+									<div class="checkout-select-start">
+										<div class="wrapper-select">
+											<select name="month" class="field-select" required>
+												<option value="">Month</option>
+												<option value="1">Sep</option>
+												<option value="2">Oct</option>
+												<option value="3">Nov</option>
+											</select>
+										</div>
+										<div class="wrapper-select">
+											<select name="day" class="field-select" required>
+												<option value="">Day</option>
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+											</select>
+										</div>
+										<div class="wrapper-select">
+											<select name="year" class="field-select" required>
+												<option value="">Year</option>
+												<option value="1">2000</option>
+												<option value="2">2001</option>
+												<option value="3">2002</option>
+											</select>
+										</div>
+									</div>
+								
+									<div class="checkout-select-end">
+										<div class="wrapper-select">
+											<select name="gender" class="field-select" required>
+												<option value="">Gender</option>
+												<option value="1">Male</option>
+												<option value="2">Female</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="checkout-step-end">
+										<label class="checkbox-label">
+											<input type="checkbox" name="checkbox" class="checkbox">
+											<span class="checkbox-label-text">I wish to receive news.</span>
+										</label>
+
+										<button type="submit" class="btn btn-primary">
+											Apply
+										</button>
+									</div>
+								</form>
+							</div>
+
+							<div class="checkout-step-content" data-step-collapse="true">
+								<div class="checkout-subtitle">
+									<p>
+										Helo, you are now logged in as <span>alex@gmail.com</span>
+									</p>
+									<span class="required">
+										*Required fields
+									</span>
+								</div>
+								<div class="checkout-info">
+									<div class="checkout-info-start">
+										<h3 class="checkout-title">
+											Date of Birth
+										</h3>
+										<div class="checkout-subtitle">
+											<p>
+												You filled in your birthday: <span>XX/XX/XXXX</span>. We will send a special gift on your birthday.
+											</p>
+
+											<button type="button" class="btn btn-link">Edit</button>
+										</div>
+									</div>
+
+									<div class="checkout-step-end">
+										<label class="checkbox-label">
+											<input type="checkbox" name="checkbox" class="checkbox">
+											<span class="checkbox-label-text">I wish to receive news.</span>
+										</label>
+
+										<span class="hint">
+											I have <a href="#" class="btn btn-link">completed</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="checkout-step" data-checkout-collapse="false">
+						<span class="checkout-step-current">
+							2
+						</span>
+						<div class="checkout-step-inner">
+							<h2 class="checkout-title">
+								Shipping address
+							</h2>
+							<div class="checkout-step-content" data-step-collapse="false">
+								<div class="checkout-subtitle">
+									<p>
+										Please enter your information to continue as a new client or sing in to your personal account.
+									</p>
+									<span class="required">
+										*Required fields
+									</span>
+								</div>
+								<form class="checkout-signin">
+									<div class="checkout-signin-start">
+										<input type="email" name="email" class="field" placeholder="Enter your email *" required>
+										<input type="password" name="password" class="field" placeholder="Enter password *" required>
+	
+										<div class="checkout-step-end">
+											<label class="checkbox-label">
+												<input type="checkbox" name="checkbox" class="checkbox">
+												<span class="checkbox-label-text">Remember Me</span>
+											</label>
+
+											<span class="hint">
+												Forgot your <a href="#" class="btn btn-link">password</a>?
+											</span>
+										</div>
+									</div>
+								
+									<div class="checkout-signin-end">
+										<button type="submit" class="btn btn-primary">
+											Sign in
+										</button>
+										<button type="button" class="btn btn-apple">
+											<span class="icon">
+												<svg>
+													<use xlink:href="./images/icons/apple.svg#svg-apple"></use>
+												</svg>
+											</span>
+											Sign in with Apple
+										</button>
+
+										<div class="checkout-step-end">
+											<span class="hint">
+												No <a href="#" class="btn btn-link">account</a> yet?
+											</span>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<div class="checkout-step" data-checkout-collapse="false">
+						<span class="checkout-step-current">
+							3
+						</span>
+						<div class="checkout-step-inner">
+							<h2 class="checkout-title">
+								Billing address
+							</h2>
+							<div class="checkout-step-content" data-step-collapse="false">
+								<div class="checkout-subtitle">
+									<p>
+										Please enter your information to continue as a new client or sing in to your personal account.
+									</p>
+									<span class="required">
+										*Required fields
+									</span>
+								</div>
+								<form class="checkout-signin">
+									<div class="checkout-signin-start">
+										<input type="email" name="email" class="field" placeholder="Enter your email *" required>
+										<input type="password" name="password" class="field" placeholder="Enter password *" required>
+	
+										<div class="checkout-step-end">
+											<label class="checkbox-label">
+												<input type="checkbox" name="checkbox" class="checkbox">
+												<span class="checkbox-label-text">Remember Me</span>
+											</label>
+
+											<span class="hint">
+												Forgot your <a href="#" class="btn btn-link">password</a>?
+											</span>
+										</div>
+									</div>
+								
+									<div class="checkout-signin-end">
+										<button type="submit" class="btn btn-primary">
+											Sign in
+										</button>
+										<button type="button" class="btn btn-apple">
+											<span class="icon">
+												<svg>
+													<use xlink:href="./images/icons/apple.svg#svg-apple"></use>
+												</svg>
+											</span>
+											Sign in with Apple
+										</button>
+
+										<div class="checkout-step-end">
+											<span class="hint">
+												No <a href="#" class="btn btn-link">account</a> yet?
+											</span>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<div class="checkout-step" data-checkout-collapse="false">
+						<span class="checkout-step-current">
+							4
+						</span>
+						<div class="checkout-step-inner">
+							<h2 class="checkout-title">
+								Shipping method
+							</h2>
+							<div class="checkout-step-content" data-step-collapse="false">
+								<div class="checkout-subtitle">
+									<p>
+										Please enter your information to continue as a new client or sing in to your personal account.
+									</p>
+									<span class="required">
+										*Required fields
+									</span>
+								</div>
+								<form class="checkout-signin">
+									<div class="checkout-signin-start">
+										<input type="email" name="email" class="field" placeholder="Enter your email *" required>
+										<input type="password" name="password" class="field" placeholder="Enter password *" required>
+	
+										<div class="checkout-step-end">
+											<label class="checkbox-label">
+												<input type="checkbox" name="checkbox" class="checkbox">
+												<span class="checkbox-label-text">Remember Me</span>
+											</label>
+
+											<span class="hint">
+												Forgot your <a href="#" class="btn btn-link">password</a>?
+											</span>
+										</div>
+									</div>
+								
+									<div class="checkout-signin-end">
+										<button type="submit" class="btn btn-primary">
+											Sign in
+										</button>
+										<button type="button" class="btn btn-apple">
+											<span class="icon">
+												<svg>
+													<use xlink:href="./images/icons/apple.svg#svg-apple"></use>
+												</svg>
+											</span>
+											Sign in with Apple
+										</button>
+
+										<div class="checkout-step-end">
+											<span class="hint">
+												No <a href="#" class="btn btn-link">account</a> yet?
+											</span>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<div class="checkout-step" data-checkout-collapse="false">
+						<span class="checkout-step-current">
+							5
+						</span>
+						<div class="checkout-step-inner">
+							<h2 class="checkout-title">
+								Gift options
+							</h2>
+							<div class="checkout-step-content" data-step-collapse="false">
+								<div class="checkout-subtitle">
+									<p>
+										Please enter your information to continue as a new client or sing in to your personal account.
+									</p>
+									<span class="required">
+										*Required fields
+									</span>
+								</div>
+								<form class="checkout-signin">
+									<div class="checkout-signin-start">
+										<input type="email" name="email" class="field" placeholder="Enter your email *" required>
+										<input type="password" name="password" class="field" placeholder="Enter password *" required>
+	
+										<div class="checkout-step-end">
+											<label class="checkbox-label">
+												<input type="checkbox" name="checkbox" class="checkbox">
+												<span class="checkbox-label-text">Remember Me</span>
+											</label>
+
+											<span class="hint">
+												Forgot your <a href="#" class="btn btn-link">password</a>?
+											</span>
+										</div>
+									</div>
+								
+									<div class="checkout-signin-end">
+										<button type="submit" class="btn btn-primary">
+											Sign in
+										</button>
+										<button type="button" class="btn btn-apple">
+											<span class="icon">
+												<svg>
+													<use xlink:href="./images/icons/apple.svg#svg-apple"></use>
+												</svg>
+											</span>
+											Sign in with Apple
+										</button>
+
+										<div class="checkout-step-end">
+											<span class="hint">
+												No <a href="#" class="btn btn-link">account</a> yet?
+											</span>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<div class="checkout-step" data-checkout-collapse="false">
+						<span class="checkout-step-current">
+							6
+						</span>
+						<div class="checkout-step-inner">
+							<h2 class="checkout-title">
+								Payment method
+							</h2>
+							<div class="checkout-step-content" data-step-collapse="false">
+								<div class="checkout-subtitle">
+									<p>
+										Please enter your information to continue as a new client or sing in to your personal account.
+									</p>
+									<span class="required">
+										*Required fields
+									</span>
+								</div>
+								<form class="checkout-signin">
+									<div class="checkout-signin-start">
+										<input type="email" name="email" class="field" placeholder="Enter your email *" required>
+										<input type="password" name="password" class="field" placeholder="Enter password *" required>
+	
+										<div class="checkout-step-end">
+											<label class="checkbox-label">
+												<input type="checkbox" name="checkbox" class="checkbox">
+												<span class="checkbox-label-text">Remember Me</span>
+											</label>
+
+											<span class="hint">
+												Forgot your <a href="#" class="btn btn-link">password</a>?
+											</span>
+										</div>
+									</div>
+								
+									<div class="checkout-signin-end">
+										<button type="submit" class="btn btn-primary">
+											Sign in
+										</button>
+										<button type="button" class="btn btn-apple">
+											<span class="icon">
+												<svg>
+													<use xlink:href="./images/icons/apple.svg#svg-apple"></use>
+												</svg>
+											</span>
+											Sign in with Apple
+										</button>
+
+										<div class="checkout-step-end">
+											<span class="hint">
+												No <a href="#" class="btn btn-link">account</a> yet?
+											</span>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<div class="checkout-step" data-checkout-collapse="false">
+						<span class="checkout-step-current">
+							7
+						</span>
+						<div class="checkout-step-inner">
+							<h2 class="checkout-title">
+								Order completed
+							</h2>
+							<div class="checkout-step-content" data-step-collapse="false">
+								<div class="checkout-subtitle">
+									<p>
+										Please enter your information to continue as a new client or sing in to your personal account.
+									</p>
+									<span class="required">
+										*Required fields
+									</span>
+								</div>
+								<form class="checkout-signin">
+									<div class="checkout-signin-start">
+										<input type="email" name="email" class="field" placeholder="Enter your email *" required>
+										<input type="password" name="password" class="field" placeholder="Enter password *" required>
+	
+										<div class="checkout-step-end">
+											<label class="checkbox-label">
+												<input type="checkbox" name="checkbox" class="checkbox">
+												<span class="checkbox-label-text">Remember Me</span>
+											</label>
+
+											<span class="hint">
+												Forgot your <a href="#" class="btn btn-link">password</a>?
+											</span>
+										</div>
+									</div>
+								
+									<div class="checkout-signin-end">
+										<button type="submit" class="btn btn-primary">
+											Sign in
+										</button>
+										<button type="button" class="btn btn-apple">
+											<span class="icon">
+												<svg>
+													<use xlink:href="./images/icons/apple.svg#svg-apple"></use>
+												</svg>
+											</span>
+											Sign in with Apple
+										</button>
+
+										<div class="checkout-step-end">
+											<span class="hint">
+												No <a href="#" class="btn btn-link">account</a> yet?
+											</span>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<aside class="checkout-order">
+					<h2 class="checkout-title">
+						Your order
+					</h2>
+					<div class="checkout-subtitle">
+						<p>
+							Total amount is calculated after choosing billing address. <br>
+							Complete your order and earn <b>XX point</b> for a discount on a future purchase.
+						</p>
+					</div>
+
+					<ul class="checkout-order-list">
+						<li>
+							<div class="card card-order">
+								<div class="card-image">
+									<img src="" loading="lazy" alt="Photo">
+								</div>
+								<div class="card-main">
+									<h3 class="card-title">
+										Sweetie Bunny Ears Rechargeable Something Title
+									</h3>
+									<div class="card-id">
+										ID: <span>XXXXXX</span>
+									</div>
+									<div class="card-info">
+										<span class="card-current">
+											1 x $XX.XX
+										</span>
+										<b class="card-price">
+											$XX.XX
+										</b>
+									</div>
+								</div>
+								<button type="button" class="btn card-close">
+									<span class="icon">
+										<svg>
+											<use xlink:href="./images/icons/close.svg#svg-close"></use>
+										</svg>
+									</span>
+								</button>
+							</div>
+						</li>
+						<li>
+							<div class="card card-order">
+								<div class="card-image">
+									<img src="" loading="lazy" alt="Photo">
+								</div>
+								<div class="card-main">
+									<h3 class="card-title">
+										Sweetie Bunny Ears Rechargeable Something Title
+									</h3>
+									<div class="card-id">
+										ID: <span>XXXXXX</span>
+									</div>
+									<div class="card-info">
+										<span class="card-current">
+											1 x $XX.XX
+										</span>
+										<b class="card-price">
+											$XX.XX
+										</b>
+									</div>
+								</div>
+								<button type="button" class="btn card-close">
+									<span class="icon">
+										<svg>
+											<use xlink:href="./images/icons/close.svg#svg-close"></use>
+										</svg>
+									</span>
+								</button>
+							</div>
+						</li>
+						<li class="checkout-order-list--subtotal">
+							Subtotal:
+							<span>$XX.XX</span>
+						</li>
+					</ul>
+
+					<div class="free-shipping">
+						<h3 class="free-shipping-title">
+							Free Shipping
+						</h3>
+						<div class="free-shipping-subtitle">
+							<p>
+								Spend <span>$XX</span> more and get free shipping.
+							</p>
+						</div>
+						<div class="progress">
+							<span>
+								$0
+							</span>
+							<div class="progress-bar">
+								<span class="progress-bar-line" style="--progress-bar: 60%;"></span>
+							</div>
+							<span>$XX</span>
+						</div>
+					</div>
+
+					<ul class="order-details">
+						<li>
+							<span>
+								Coupon:
+							</span>
+							<span>
+								-$00.00
+							</span>
+						</li>
+						<li>
+							<span>
+								Gift Card:
+							</span>
+							<span>
+								-$00.00
+							</span>
+						</li>
+						<li>
+							<span>
+								Points:
+							</span>
+							<span>
+								-$00.00
+							</span>
+						</li>
+						<li>
+							<span>
+								Shipping:
+							</span>
+							<span>
+								-$00.00
+							</span>
+						</li>
+						<li>
+							<span>
+								Tax: 
+								<span class="icon">
+									<svg>
+										<use xlink:href="./images/icons/circle-info.svg#svg-circle-info"></use>
+									</svg>
+								</span>
+							</span>
+							<span>
+								-$00.00
+							</span>
+						</li>
+					</ul>
+
+					<div class="order-total">
+						<h3 class="order-total-title">
+							Total: <span>$XX.XX</span>
+						</h3>
+						<div class="order-total-subtitle">
+							You saved: <span>$XX.XX</span>
+						</div>
+						<p class="order-total-text">
+							In 4 <a href="#" class="btn btn-link">payments</a> of <span>$XX.XX</span> with 
+							<span class="icon">
+								<svg>
+									<use xlink:href="./images/icons/afterpay.svg#svg-afterpay"></use>
+								</svg>
+							</span>
+						</p>
+					</div>
+				</aside>
+			</div>
+		</div>
+
+	</main>
+
+	<!--#include virtual="/parts/footer.html" -->
+</div>
+<!--#include virtual="/parts/scripts.html" -->

@@ -1,0 +1,104 @@
+.field
+	--_font-size: 13px
+	--_font-weight: 400
+	--_line-height: 1
+	--_color: var(--dark-color)
+	--_placeholder-color: #909090
+	--_height: 40px
+	--_background-color: var(--gray-light-color)
+	--_border-width: 1px
+	--_border-color: #909090
+	--_border-radius: 20px
+	--_padding-x: 14px
+	--_padding-y: 10px
+	--_transition-duration: 250ms
+	--_transition-type: ease-in-out
+	min-height: var(--_height)
+	font-family: var(--swis)
+	font-size: var(--_font-size)
+	font-weight: var(--_font-weight)
+	line-height: var(--_line-height)
+	color: var(--_color)
+	background-color: var(--_background-color)
+	border: var(--_border-width) solid var(--_border-color)
+	border-radius: var(--_border-radius)
+	padding: var(--_padding-y) var(--_padding-x)
+	outline: none
+	transition: color var(--_transition-duration) var(--_transition-type), background var(--_transition-duration) var(--_transition-type), border var(--_transition-duration) var(--_transition-type)
+
+	&::placeholder
+		color: var(--_placeholder-color)
+		transition: color var(--_transition-duration) var(--_transition-type)
+
+	&:focus-visible
+		--_border-color: var(--_color)
+
+		&::placeholder
+			color: var(--_color)
+
+.wrapper-select
+	--_font-size: 13px
+	--_font-weight: 400
+	--_line-height: 1
+	--_color: var(--dark-color)
+	--_placeholder-color: #909090
+	--_height: 40px
+	--_background-color: var(--gray-light-color)
+	--_border-width: 1px
+	--_border-color: #909090
+	--_border-radius: 20px
+	--_padding-x: 14px
+	--_padding-y: 10px
+	--_transition-duration: 250ms
+	--_transition-type: ease-in-out
+	position: relative
+
+	&::after
+		content: ''
+		display: block
+		width: 16px
+		height: 16px
+		background-image: url(../images/icons/circle-arrow.svg)
+		background-repeat: no-repeat
+		background-position: center
+		background-size: 16px
+		position: absolute
+		top: 50%
+		right: var(--_padding-x)
+		transform: translateY(-50%)
+		pointer-events: none
+
+.field-select
+	appearance: none
+	width: 100%
+	min-height: var(--_height)
+	font-family: var(--swis)
+	font-size: var(--_font-size)
+	font-weight: var(--_font-weight)
+	line-height: var(--_line-height)
+	color: var(--_placeholder-color)
+	background-color: var(--_background-color)
+	margin: 0
+	border: var(--_border-width) solid var(--_border-color)
+	border-radius: var(--_border-radius)
+	padding: var(--_padding-y) calc( var(--_padding-x) * 2.4 ) var(--_padding-y) var(--_padding-x)
+	outline: none
+	cursor: pointer
+	transition: color var(--_transition-duration) var(--_transition-type), background var(--_transition-duration) var(--_transition-type), border var(--_transition-duration) var(--_transition-type)
+
+	&::after
+		content: ''
+		display: block
+		width: 16px
+		height: 16px
+		background-image: url(../images/icons/circle-arrow.svg)
+		background-repeat: no-repeat
+		background-position: center
+		background-size: contain
+		position: absolute
+		top: 50%
+		right: var(--_padding-x)
+		pointer-events: none
+
+	&:focus
+		color: var(--_color)

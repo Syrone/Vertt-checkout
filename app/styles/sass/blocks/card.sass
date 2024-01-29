@@ -1,0 +1,76 @@
+//** (Start) Card **//
+.card
+	width: 100%
+	display: flex
+	align-items: stretch
+	gap: 32px
+
+.card-image
+	width: 100px
+	height: 100px
+	flex-shrink: 0
+	background-color: #fff
+	border-radius: 16px
+	box-shadow: var(--box-shadow-5)
+
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+		object-position: center
+		border-radius: inherit
+
+.card-main
+	display: flex
+	flex-direction: column
+
+.card-title
+	display: -webkit-box
+	-webkit-line-clamp: 1
+	-webkit-box-orient: vertical
+	font-size: 16px
+	line-height: normal
+	overflow: hidden
+	text-overflow: ellipsis
+	margin-bottom: 4px
+
+.card-id
+	font-size: 13px
+	line-height: 1
+	text-transform: uppercase
+	margin-bottom: 4px
+
+.card-info
+	display: flex
+	flex-direction: column
+	gap: 4px
+	font-size: 16px
+	line-height: 1
+	margin-top: auto
+
+.card-current
+	font-size: 9px
+
+.card-close
+	--_height: initial
+	--_padding-y: initial
+	--_padding-x: initial
+	--_border-width: 0
+	align-self: flex-start
+	flex-shrink: 0
+	margin-left: auto
+	transition: opacity var(--_transition-duration) var(--_transition-type)
+
+	&:is(:hover, :focus-visible)
+		opacity: .7
+
+	&:is(:active, .is-active)
+		opacity: 1
+
+//** (End) Card **//
+
+
+@media (min-width: 768px)
+	
+	.card-main
+		max-width: 280px

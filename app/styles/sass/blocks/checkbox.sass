@@ -1,0 +1,33 @@
+.checkbox
+	--_size: 16px
+	--_color: var(--dark-color)
+	--_background-color: var(--gray-light-color)
+	--_border-width: 1px
+	--_border-color: var(--dark-color)
+	appearance: none
+	width: var(--_size)
+	height: var(--_size)
+	background-color: var(--_background-color)
+	border: var(--_border-width) solid var(--_border-color)
+	margin: 0
+	padding: 0
+	border-radius: 50%
+	flex-shrink: 0
+	cursor: pointer
+	
+	&:checked
+		background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12.1" cy="12.1" r="1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>')
+		background-repeat: no-repeat
+		background-size: 30px
+		background-position: center
+
+.checkbox-label
+	display: flex
+	align-items: center
+	cursor: pointer
+
+.checkbox-label-text
+	font-size: 10px
+	line-height: 1
+	margin-left: 16px
+	user-select: none

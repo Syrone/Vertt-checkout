@@ -1,0 +1,80 @@
+.btn
+	--_height: 40px
+	--_font-size: 16px
+	--_font-weight: 500
+	--_line-height: 1
+	--_color: var(--dark-color)
+	--_color-active: #909090
+	--_background-color: transparent
+	--_background-color-active: transparent
+	--_border-width: 1px
+	--_border-color: var(--dark-color)
+	--_border-color-active: #909090
+	--_border-radius: 20px
+	--_padding-x: 14px
+	--_padding-y: 10px
+	--_transition-duration: 250ms
+	--_transition-type: ease-in-out
+	min-height: var(--_height)
+	display: flex
+	align-items: center
+	justify-content: center
+	font-family: var(--swis)
+	font-size: var(--_font-size)
+	font-weight: var(--_font-weight)
+	line-height: var(--_line-height)
+	color: var(--_color)
+	text-transform: uppercase
+	cursor: pointer
+	background-color: var(--_background-color)
+	border: var(--_border-width) solid var(--_border-color)
+	border-radius: var(--_border-radius)
+	padding: var(--_padding-y) var(--_padding-x)
+	transition: color var(--_transition-duration) var(--_transition-type), background var(--_transition-duration) var(--_transition-type), border var(--_transition-duration) var(--_transition-type)
+
+	&:is(:hover, :focus-visible, :active, .is-active)
+		color: var(--_color-active)
+		background-color: var(--_background-color-active)
+		border-color: var(--_border-color-active)
+
+.btn-primary
+	--_color: var(--dark-color)
+	--_color-active: var(--dark-color)
+	--_background-color: var(--primary-color)
+	--_background-color-active: var(--primary-color-hover)
+	--_border-color: var(--primary-color)
+	--_border-color-active: var(--primary-color-hover)
+
+	&:is(:focus-visible, :active)
+		--_color-active: #fff
+		--_background-color-active: var(--primary-color-focus)
+		--_border-color-active: var(--primary-color-focus)
+
+.btn-apple
+	--_font-size: 14px
+	--_color: #fff
+	--_color-active: #000
+	--_background-color: #000
+	--_background-color-active: transparent
+	--_border-color: #000
+	--_border-color-active: #000
+	align-items: center
+	text-transform: initial
+
+	.icon
+		--_i-size: 14px
+		--_i-color: inherit
+		margin-right: 8px
+		margin-top: -3px
+
+.btn.btn-link
+	--_height: initial
+	--_font-size: inherit
+	--_font-weight: 400
+	--_color: inherit
+	--_border-width: 0
+	--_padding-x: initial
+	--_padding-y: initial
+	display: inline-block
+	text-decoration: underline
+	text-transform: initial

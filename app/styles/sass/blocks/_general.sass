@@ -1,0 +1,28 @@
+// GENERAL PROJECT STYLES
+
+.visible-hidden
+	width: 0
+	height: 0
+	position: absolute
+	z-index: -1
+	opacity: 0
+	visibility: hidden
+
+.page
+	min-height: 100vh
+	min-height: 100dvh
+	display: flex
+	flex-direction: column
+
+	.main
+		flex: 1
+
+@media (min-width: 1024px)
+
+	.d-lg-up-none
+		display: none !important
+
+@media (max-width: 1024px)
+
+	.d-lg-down-none
+		display: none !important
