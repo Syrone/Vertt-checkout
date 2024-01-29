@@ -2,44 +2,60 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-	const collapseSteps = document.querySelectorAll('[data-step-collapse]')
+	const collapseContents = document.querySelectorAll('[data-content-collapse]')
+	const checkboxBilling = document.querySelectorAll('[data-billing]')
 
-	function handleAttributeChange(mutationsList) {
+	function contentAttributeChange(mutationsList) {
 		mutationsList.forEach((mutation) => {
-			if (mutation.attributeName === 'data-step-collapse') {
-				const step = mutation.target;
-				const isCollapse = step.getAttribute('data-step-collapse') === 'true';
-	
+			if (mutation.attributeName === 'data-content-collapse') {
+				const content = mutation.target;
+				const isCollapse = content.getAttribute('data-content-collapse') === 'true';
+
 				if (isCollapse) {
-					step.style.maxHeight = `${step.scrollHeight}px`;
+					content.style.maxHeight = `${content.scrollHeight}px`;
 					setTimeout(() => {
-						step.style.maxHeight = '100%';
+						content.style.maxHeight = '100%';
 					}, 600);
 				} else {
-					step.style.maxHeight = `${step.scrollHeight}px`;
+					content.style.maxHeight = `${content.scrollHeight}px`;
 					setTimeout(() => {
-						step.style = '';
+						content.style = '';
 					}, 600);
 				}
 			}
 		});
 	}
-	
-	const observerStepCollapse = new MutationObserver(handleAttributeChange);
-	
-	if (collapseSteps.length > 0) {
-		collapseSteps.forEach((step) => {
 
-			const isCollapse = step.getAttribute('data-step-collapse') === 'true';
+	const observerContentCollapse = new MutationObserver(contentAttributeChange);
+
+	if (collapseContents.length > 0) {
+		collapseContents.forEach((content) => {
+
+			const isCollapse = content.getAttribute('data-content-collapse') === 'true';
 
 			if (isCollapse) {
-				step.style.maxHeight = `${step.scrollHeight}px`;
+				content.style.maxHeight = `${content.scrollHeight}px`;
 				setTimeout(() => {
-					step.style.maxHeight = '100%';
+					content.style.maxHeight = '100%';
 				}, 600);
 			}
 
-			observerStepCollapse.observe(step, { attributes: true });
+			observerContentCollapse.observe(content, { attributes: true });
+		});
+	}
+
+	if (checkboxBilling.length > 0) {
+		checkboxBilling.forEach((checkbox) => {
+			const input = checkbox.querySelector('.checkbox')
+			checkbox.addEventListener('change', () => {
+				const content = checkbox.previousElementSibling;
+				const isChecked = input.checked;
+				content.setAttribute('data-content-collapse', isChecked ? 'false' : 'true');
+				setTimeout(() => {
+					checkbox.setAttribute('data-billing', isChecked ? 'true' : 'false');
+				}, isChecked ? 850 : 450);
+				contentAttributeChange([{ target: content }]);
+			});
 		});
 	}
 

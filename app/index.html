@@ -12,7 +12,7 @@
 		<div class="checkout">
 			<div class="container wr">
 				<div class="checkout-inner">
-					<div class="checkout-step" data-checkout-collapse="true">
+					<div class="checkout-step" data-step-collapse="true">
 						<span class="checkout-step-current">
 							1
 						</span>
@@ -20,7 +20,7 @@
 							<h2 class="checkout-title">
 								Contact information
 							</h2>
-							<div class="checkout-step-content" data-step-collapse="true">
+							<div class="checkout-step-content" data-content-collapse="true">
 								<div class="checkout-subtitle">
 									<p>
 										Please enter your information to continue as a new client or sing in to your personal account.
@@ -68,7 +68,7 @@
 								</form>
 							</div>
 
-							<div class="checkout-step-content" data-step-collapse="true">
+							<div class="checkout-step-content" data-content-collapse="true">
 								<div class="checkout-subtitle">
 									<p>
 										Hello, you are now logged in as <span>alex@gmail.com</span>
@@ -129,7 +129,7 @@
 								</form>
 							</div>
 
-							<div class="checkout-step-content" data-step-collapse="true">
+							<div class="checkout-step-content" data-content-collapse="true">
 								<div class="checkout-subtitle">
 									<p>
 										Hello, you are now logged in as <span>alex@gmail.com</span>
@@ -168,7 +168,7 @@
 						</div>
 					</div>
 
-					<div class="checkout-step" data-checkout-collapse="true">
+					<div class="checkout-step" data-step-collapse="true">
 						<span class="checkout-step-current">
 							2
 						</span>
@@ -176,13 +176,13 @@
 							<h2 class="checkout-title">
 								Shipping address
 							</h2>
-							<div class="checkout-step-content" data-step-collapse="true">
+							<form class="checkout-step-content" data-content-collapse="true">
 								<div class="checkout-subtitle">
 									<p>
 										Enter please your shipping address.
 									</p>
 								</div>
-								<form class="checkout-form">
+								<div class="checkout-form" data-content-collapse="true">
 									<input type="text" class="field" name="firstName" placeholder="Enter your first name *">
 									<input type="text" class="field" name="lastName" placeholder="Enter your last name *">
 									<input type="text" class="field" name="street"
@@ -217,27 +217,32 @@
 									<button type="submit" class="btn btn-primary">
 										Apply
 									</button>
+								</div>
 
-									<div class="checkout-step-hint">
-										<label class="checkbox-label">
-											<input type="checkbox" name="checkbox" class="checkbox">
-											<span class="checkbox-label-text">Billing address same</span>
-										</label>
+								<div class="checkout-step-hint"
+									data-billing="false">
+									<label class="checkbox-label">
+										<input type="checkbox" name="checkbox" class="checkbox">
+										<span class="checkbox-label-text">Billing address same</span>
+									</label>
 
-										<p class="hint">
-											By clicking the "APPLY" button, you confirm that you have read the <a href="#"
-												class="btn btn-link">Privacy Policy</a> and consent to the processing of your personal data by
-											Vertt Store in the conditions set forth in the relevant <a href="#" class="btn btn-link">Privacy
-												Policy</a>.
-											You may unsubscribe at any time by clicking the "unsubscribe" link at the bottom of any email.
-										</p>
-									</div>
-								</form>
-							</div>
+									<button type="submit" class="btn btn-primary">
+										Apply
+									</button>
+
+									<p class="hint">
+										By clicking the "APPLY" button, you confirm that you have read the <a href="#"
+											class="btn btn-link">Privacy Policy</a> and consent to the processing of your personal data by
+										Vertt Store in the conditions set forth in the relevant <a href="#" class="btn btn-link">Privacy
+											Policy</a>.
+										You may unsubscribe at any time by clicking the "unsubscribe" link at the bottom of any email.
+									</p>
+								</div>
+							</form>
 						</div>
 					</div>
 
-					<div class="checkout-step" data-checkout-collapse="false">
+					<div class="checkout-step" data-step-collapse="true">
 						<span class="checkout-step-current">
 							3
 						</span>
@@ -245,57 +250,73 @@
 							<h2 class="checkout-title">
 								Billing address
 							</h2>
-							<div class="checkout-step-content" data-step-collapse="false">
+							<form class="checkout-step-content" data-content-collapse="true">
 								<div class="checkout-subtitle">
 									<p>
-										Please enter your information to continue as a new client or sing in to your personal account.
+										Enter please your billing address.
 									</p>
-									<span class="required">
-										*Required fields
-									</span>
 								</div>
-								<form class="checkout-form">
-									<div class="checkout-signin-start">
-										<input type="email" name="email" class="field" placeholder="Enter your email *" required>
-										<input type="password" name="password" class="field" placeholder="Enter password *" required>
-
-										<div class="checkout-step-end">
-											<label class="checkbox-label">
-												<input type="checkbox" name="checkbox" class="checkbox">
-												<span class="checkbox-label-text">Remember Me</span>
-											</label>
-
-											<span class="hint">
-												Forgot your <a href="#" class="btn btn-link">password</a>?
-											</span>
-										</div>
+								<div class="checkout-form" data-content-collapse="true">
+									<input type="text" class="field" name="firstName" placeholder="Enter your first name *">
+									<input type="text" class="field" name="lastName" placeholder="Enter your last name *">
+									<input type="text" class="field" name="street"
+										placeholder="Enter your Street address (No P. O. Box) *">
+									<input type="text" class="field" name="floor" placeholder="Apt / Floor / Suite *">
+									<div class="wrapper-select">
+										<select class="field-select" name="country" required>
+											<option value="">Country *</option>
+											<option value="1">First</option>
+											<option value="2">Second</option>
+											<option value="3">Third</option>
+										</select>
 									</div>
-
-									<div class="checkout-signin-end">
-										<button type="submit" class="btn btn-primary">
-											Sign in
-										</button>
-										<button type="button" class="btn btn-apple">
-											<span class="icon">
-												<svg>
-													<use xlink:href="./images/icons/apple.svg#svg-apple"></use>
-												</svg>
-											</span>
-											Sign in with Apple
-										</button>
-
-										<div class="checkout-step-end">
-											<span class="hint">
-												No <a href="#" class="btn btn-link">account</a> yet?
-											</span>
-										</div>
+									<div class="wrapper-select">
+										<select class="field-select" name="city" required>
+											<option value="">City *</option>
+											<option value="1">First</option>
+											<option value="2">Second</option>
+											<option value="3">Third</option>
+										</select>
 									</div>
-								</form>
-							</div>
+									<div class="wrapper-select">
+										<select class="field-select" name="state" required>
+											<option value="">State *</option>
+											<option value="1">First</option>
+											<option value="2">Second</option>
+											<option value="3">Third</option>
+										</select>
+									</div>
+									<input type="text" class="field" name="zip" placeholder="ZIP / Postal code *">
+									<input type="tel" class="field" name="phone" placeholder="Enter your phone number *">
+									<button type="submit" class="btn btn-primary">
+										Apply
+									</button>
+								</div>
+
+								<div class="checkout-step-hint"
+									data-billing="false">
+									<label class="checkbox-label">
+										<input type="checkbox" name="checkbox" class="checkbox">
+										<span class="checkbox-label-text">Billing address is the same as Shipping address</span>
+									</label>
+
+									<button type="submit" class="btn btn-primary">
+										Apply
+									</button>
+
+									<p class="hint">
+										By clicking the "APPLY" button, you confirm that you have read the <a href="#"
+											class="btn btn-link">Privacy Policy</a> and consent to the processing of your personal data by
+										Vertt Store in the conditions set forth in the relevant <a href="#" class="btn btn-link">Privacy
+											Policy</a>.
+										You may unsubscribe at any time by clicking the "unsubscribe" link at the bottom of any email.
+									</p>
+								</div>
+							</form>
 						</div>
 					</div>
 
-					<div class="checkout-step" data-checkout-collapse="false">
+					<div class="checkout-step" data-step-collapse="true">
 						<span class="checkout-step-current">
 							4
 						</span>
@@ -303,57 +324,43 @@
 							<h2 class="checkout-title">
 								Shipping method
 							</h2>
-							<div class="checkout-step-content" data-step-collapse="false">
+							<div class="checkout-step-content" data-content-collapse="true">
 								<div class="checkout-subtitle">
 									<p>
-										Please enter your information to continue as a new client or sing in to your personal account.
+										Select a shipping method.
+										<br>
+										Free standard shipping on orders over $150.
 									</p>
-									<span class="required">
-										*Required fields
-									</span>
 								</div>
-								<form class="checkout-form">
-									<div class="checkout-signin-start">
-										<input type="email" name="email" class="field" placeholder="Enter your email *" required>
-										<input type="password" name="password" class="field" placeholder="Enter password *" required>
+								<form class="checkout-form checkout-form--method">
+									<button type="button" class="btn btn-primary is-active">
+										Standard
+									</button>
+									<button type="button" class="btn btn-primary">
+										Priority
+									</button>
+									<button type="button" class="btn btn-primary">
+										Express
+									</button>
+									<button type="button" class="btn btn-primary">
+										International
+									</button>
+									
+									<button type="submit" class="btn btn-primary">
+										Apply
+									</button>
 
-										<div class="checkout-step-end">
-											<label class="checkbox-label">
-												<input type="checkbox" name="checkbox" class="checkbox">
-												<span class="checkbox-label-text">Remember Me</span>
-											</label>
-
-											<span class="hint">
-												Forgot your <a href="#" class="btn btn-link">password</a>?
-											</span>
-										</div>
-									</div>
-
-									<div class="checkout-signin-end">
-										<button type="submit" class="btn btn-primary">
-											Sign in
-										</button>
-										<button type="button" class="btn btn-apple">
-											<span class="icon">
-												<svg>
-													<use xlink:href="./images/icons/apple.svg#svg-apple"></use>
-												</svg>
-											</span>
-											Sign in with Apple
-										</button>
-
-										<div class="checkout-step-end">
-											<span class="hint">
-												No <a href="#" class="btn btn-link">account</a> yet?
-											</span>
-										</div>
+									<div class="checkout-step-hint">
+										<p class="hint">
+											We don't shop to P.O Boxes APO/FPO/U.S. territories. All orders are shipped in boxes without labels or logos, absolutely all boxes are discreet. You can find out more at <a href="#" class="btn btn-link">Shipping Policy</a>.
+										</p>
 									</div>
 								</form>
 							</div>
 						</div>
 					</div>
 
-					<div class="checkout-step" data-checkout-collapse="false">
+					<div class="checkout-step" data-step-collapse="false">
 						<span class="checkout-step-current">
 							5
 						</span>
@@ -361,7 +368,7 @@
 							<h2 class="checkout-title">
 								Gift options
 							</h2>
-							<div class="checkout-step-content" data-step-collapse="false">
+							<div class="checkout-step-content" data-content-collapse="false">
 								<div class="checkout-subtitle">
 									<p>
 										Please enter your information to continue as a new client or sing in to your personal account.
@@ -411,7 +418,7 @@
 						</div>
 					</div>
 
-					<div class="checkout-step" data-checkout-collapse="false">
+					<div class="checkout-step" data-step-collapse="false">
 						<span class="checkout-step-current">
 							6
 						</span>
@@ -419,7 +426,7 @@
 							<h2 class="checkout-title">
 								Payment method
 							</h2>
-							<div class="checkout-step-content" data-step-collapse="false">
+							<div class="checkout-step-content" data-content-collapse="false">
 								<div class="checkout-subtitle">
 									<p>
 										Please enter your information to continue as a new client or sing in to your personal account.
@@ -469,7 +476,7 @@
 						</div>
 					</div>
 
-					<div class="checkout-step" data-checkout-collapse="false">
+					<div class="checkout-step" data-step-collapse="false">
 						<span class="checkout-step-current">
 							7
 						</span>
@@ -477,7 +484,7 @@
 							<h2 class="checkout-title">
 								Order completed
 							</h2>
-							<div class="checkout-step-content" data-step-collapse="false">
+							<div class="checkout-step-content" data-content-collapse="false">
 								<div class="checkout-subtitle">
 									<p>
 										Please enter your information to continue as a new client or sing in to your personal account.
