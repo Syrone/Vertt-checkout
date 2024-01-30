@@ -224,8 +224,7 @@
 									</button>
 								</div>
 
-								<div class="checkout-step-hint"
-									data-billing="false">
+								<div class="checkout-step-hint" data-billing="false">
 									<label class="checkbox-label">
 										<input type="checkbox" name="checkbox" class="checkbox">
 										<span class="checkbox-label-text">Billing address same</span>
@@ -291,8 +290,7 @@
 									</button>
 								</div>
 
-								<div class="checkout-step-hint"
-									data-billing="false">
+								<div class="checkout-step-hint" data-billing="false">
 									<label class="checkbox-label">
 										<input type="checkbox" name="checkbox" class="checkbox">
 										<span class="checkbox-label-text">Billing address is the same as Shipping address</span>
@@ -343,14 +341,16 @@
 									<button type="button" class="btn btn-primary btn-toggle-method">
 										International
 									</button>
-									
+
 									<button type="submit" class="btn btn-primary">
 										Apply
 									</button>
 
 									<div class="checkout-step-hint">
 										<p class="hint">
-											We don't shop to P.O Boxes APO/FPO/U.S. territories. All orders are shipped in boxes without labels or logos, absolutely all boxes are discreet. You can find out more at <a href="#" class="btn btn-link">Shipping Policy</a>.
+											We don't shop to P.O Boxes APO/FPO/U.S. territories. All orders are shipped in boxes without
+											labels or logos, absolutely all boxes are discreet. You can find out more at <a href="#"
+												class="btn btn-link">Shipping Policy</a>.
 										</p>
 									</div>
 								</form>
@@ -375,7 +375,8 @@
 											</p>
 										</div>
 									</div>
-									<input type="text" name="coupon" class="field" data-success-placeholder="You have successfully applied the coupon" placeholder="Number" required>
+									<input type="text" name="coupon" class="field"
+										data-success-placeholder="You have successfully applied the coupon" placeholder="Number" required>
 									<button type="submit" class="btn btn-primary">
 										Apply
 									</button>
@@ -388,7 +389,9 @@
 											</p>
 										</div>
 									</div>
-									<input type="text" name="giftNumber" class="field" data-success-placeholder="You have successfully applied the gift card" placeholder="Number" required>
+									<input type="text" name="giftNumber" class="field"
+										data-success-placeholder="You have successfully applied the gift card" placeholder="Number"
+										required>
 									<button type="submit" class="btn btn-primary">
 										Apply
 									</button>
@@ -422,7 +425,7 @@
 						</div>
 					</div>
 
-					<div class="checkout-step" data-step-collapse="false">
+					<div class="checkout-step" data-step-collapse="true">
 						<span class="checkout-step-current">
 							6
 						</span>
@@ -430,50 +433,94 @@
 							<h2 class="checkout-title">
 								Payment method
 							</h2>
-							<div class="checkout-step-content" data-content-collapse="false">
+							<div class="checkout-step-content" data-content-collapse="true">
 								<div class="checkout-subtitle">
 									<p>
-										Please enter your information to continue as a new client or sing in to your personal account.
+										Select a payment method.
 									</p>
-									<span class="required">
-										*Required fields
-									</span>
 								</div>
 								<form class="checkout-form">
-									<div class="checkout-signin-start">
-										<input type="email" name="email" class="field" placeholder="Enter your email *" required>
-										<input type="password" name="password" class="field" placeholder="Enter password *" required>
+									<button type="button" id="creditCollapse" class="btn btn-primary btn-payment-method">
+										Credit or debit card
+									</button>
+									<div class="checkout-form--payment" data-target-collapse="creditCollapse" data-content-collapse="false">
+										<input type="text" name="card" class="field field-100" placeholder="Credit or Debit Card number *" required>
+										<input type="text" name="date" class="field" placeholder="MM / YY *" required>
+										<input type="text" name="code" class="field" placeholder="CVC *" required>
 
 										<div class="checkout-step-end">
 											<label class="checkbox-label">
 												<input type="checkbox" name="checkbox" class="checkbox">
-												<span class="checkbox-label-text">Remember Me</span>
+												<span class="checkbox-label-text">Save to profile</span>
 											</label>
 
-											<span class="hint">
-												Forgot your <a href="#" class="btn btn-link">password</a>?
-											</span>
+											<!-- <img src="./images/icons/payment-method.svg" class="img-fluid" loading="lazy" alt="Image Payment Method"> -->
+										</div>
+									</div>
+									<button type="button" id="afterpayCollapse" class="btn btn-primary btn-payment-method">
+										<span class="icon">
+											<svg>
+												<use xlink:href="./images/icons/afterpay-text.svg#svg-afterpay-text"></use>
+											</svg>
+										</span>
+									</button>
+									<button type="button" id="paypalCollapse" class="btn btn-primary btn-payment-method">
+										<span class="icon">
+											<svg>
+												<use xlink:href="./images/icons/paypal-text.svg#svg-paypal-text"></use>
+											</svg>
+										</span>
+									</button>
+
+									<div class="checkout-form--payment" data-target-collapse="afterpayCollapse" data-content-collapse="true">
+										<ul class="list">
+											<li>
+												<span class="icon">
+													<svg>
+														<use xlink:href="./images/icons/check.svg#svg-check"></use>
+													</svg>
+												</span>
+												Pay in 4. Interest-free
+											</li>
+											<li>
+												<span class="icon">
+													<svg>
+														<use xlink:href="./images/icons/check.svg#svg-check"></use>
+													</svg>
+												</span>
+												Pay over time with flexible financing
+											</li>
+											<li>
+												<span class="icon">
+													<svg>
+														<use xlink:href="./images/icons/check.svg#svg-check"></use>
+													</svg>
+												</span>
+												Trusted by more than 150 million users
+											</li>
+										</ul>
+
+										<div class="checkout-step-end">
+											<p class="hint">
+												You will login on Afterpay's site on the next page and review your order, then you will finish your transaction on verr.shop.
+												By continuing, I accept the Afterpay <a href="#" class="btn btn-link">Terms of Service</a> and confirm that I have read the <a href="#" class="btn btn-link">Privacy Policy</a>.
+											</p>
+										</div>
+									</div>
+									<div class="checkout-form--payment" data-target-collapse="paypalCollapse" data-content-collapse="false">
+										<div class="checkout-step-end">
+											<p class="hint">
+												You will login on PayPal's site on the next page and review your order, then you will finish your transaction on verr.shop.
+											</p>
 										</div>
 									</div>
 
-									<div class="checkout-signin-end">
-										<button type="submit" class="btn btn-primary">
-											Sign in
-										</button>
-										<button type="button" class="btn btn-apple">
-											<span class="icon">
-												<svg>
-													<use xlink:href="./images/icons/apple.svg#svg-apple"></use>
-												</svg>
-											</span>
-											Sign in with Apple
-										</button>
-
-										<div class="checkout-step-end">
-											<span class="hint">
-												No <a href="#" class="btn btn-link">account</a> yet?
-											</span>
-										</div>
+									<div class="checkout-payment-hint">
+										<p class="hint">
+											Pay for your order uses a secure method. We use 256-bit encryption - a higher security standrard
+											that many banks. Before continuing, please make sure your browser settings are set to 'Allow: The
+											site can display pop-up windows'. Check instructions for <a href="#" class="btn btn-link">Safari</a> or <a href="#" class="btn btn-link">Chrome</a>.
+										</p>
 									</div>
 								</form>
 							</div>

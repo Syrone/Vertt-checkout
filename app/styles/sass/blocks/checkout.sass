@@ -153,7 +153,9 @@
 		flex: 0 0 calc( 50% - 24px )
 
 	& > .checkout-step-hint,
-	& > .checkout-step-end
+	& > .checkout-payment-hint,
+	& > .checkout-step-end,
+	& > .btn-payment-method:first-child
 		width: 100%
 		flex-basis: 100%
 
@@ -183,6 +185,36 @@
 		width: 100%
 		flex-basis: 100%
 
+.checkout-form--payment
+	width: 100%
+	flex-basis: 100%
+	display: flex
+	flex-wrap: wrap
+	align-items: flex-start
+	gap: 24px 48px
+
+	&[data-content-collapse="true"]
+		display: flex
+
+	&[data-content-collapse="false"]
+		display: none
+
+	& > *
+		flex: 0 0 calc( 50% - 24px )
+
+	& > .checkout-step-end,
+	& > .field-100,
+	& > .list
+		width: 100%
+		flex-basis: 100%
+
+.checkout-step-hint,
+.checkout-gift-hint,
+.checkout-payment-hint
+
+	.hint
+		margin: initial
+
 .checkout-step-hint
 	display: flex
 	flex-direction: column
@@ -192,7 +224,6 @@
 	.hint
 		font-size: 9px
 		color: #808080
-		margin: initial
 
 [data-billing="false"]
 
@@ -223,9 +254,6 @@
 	display: flex
 	align-items: flex-start
 	justify-content: space-between
-
-	& > .hint
-		margin: initial
 
 .checkout-signin-start,
 .checkout-signin-end
@@ -403,6 +431,7 @@
 			& > *
 				flex: 0 0 calc( 50% - 12px )
 
+	.checkout-form--payment,
 	.checkout-form-header
 		width: 100%
 		flex-basis: 100%
@@ -443,6 +472,7 @@
 		p
 			max-width: initial
 
+	.checkout-form--payment,
 	.checkout-form-header
 		width: 100%
 		flex-basis: 100%

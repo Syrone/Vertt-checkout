@@ -111,4 +111,55 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 	//** (End) Checkout Step Gift Card **//
+
+	//** (Start) Checkout Payment Buttons **//
+	const paymentButtons = document.querySelectorAll('.btn-payment-method')
+	const targetCollapse = document.querySelectorAll('[data-target-collapse]')
+
+	if (paymentButtons.length > 0) {
+		paymentButtons.forEach((button) => {
+			const getID = button.getAttribute('id')
+
+			if (targetCollapse.length > 0) {
+				targetCollapse.forEach((collapse) => {
+					let targetID = collapse.getAttribute('data-target-collapse');
+					let contentCollapse = collapse.getAttribute('data-content-collapse');
+	
+					if (targetID === getID) {
+						if (contentCollapse === 'true') {
+							button.classList.add('is-active');
+						}
+					}
+
+					button.addEventListener('click', () => {
+						targetID = collapse.getAttribute('data-target-collapse');
+						contentCollapse = collapse.getAttribute('data-content-collapse');
+	
+						if (targetID === getID) {
+							if (contentCollapse === 'false') {
+								targetCollapse.forEach((otherCollapse) => {
+									const otherContentCollapse = otherCollapse.getAttribute('data-content-collapse');
+									if (otherContentCollapse === 'true') {
+										otherCollapse.setAttribute('data-content-collapse', 'false');
+										const otherButtonID = otherCollapse.getAttribute('data-target-collapse');
+										const otherButton = document.getElementById(otherButtonID);
+										if (otherButton) {
+											otherButton.classList.remove('is-active');
+										}
+									}
+								});
+
+								collapse.setAttribute('data-content-collapse', 'true');
+								button.classList.add('is-active');
+							} else {
+								collapse.setAttribute('data-content-collapse', 'false');
+								button.classList.remove('is-active');
+							}
+						}
+					});
+				});
+			}
+		})
+	}
+	//** (End) Checkout Payment Buttons **//
 })
