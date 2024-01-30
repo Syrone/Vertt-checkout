@@ -35,7 +35,7 @@
 		<div class="checkout">
 			<div class="container wr">
 				<div class="checkout-inner">
-					<div class="checkout-step" data-step-collapse="true" data-complete-collapse="true">
+					<div class="checkout-step" data-step-collapse="true" data-complete-collapse="false">
 						<span class="checkout-step-current">
 							1
 						</span>
@@ -51,7 +51,7 @@
 									*Required fields
 								</span>
 							</div>
-							<div class="checkout-step-content" data-content-collapse="false">
+							<div class="checkout-step-content" data-content-collapse="true">
 								<div class="checkout-subtitle">
 									<p>
 										Please enter your information to continue as a new client or sing in to your personal account.
@@ -99,7 +99,7 @@
 								</form>
 							</div>
 
-							<div class="checkout-step-content" data-content-collapse="false">
+							<div class="checkout-step-content" data-content-collapse="true">
 								<div class="checkout-subtitle">
 									<p>
 										Hello, you are now logged in as <span>alex@gmail.com</span>
@@ -172,7 +172,7 @@
 								</form>
 							</div>
 
-							<div class="checkout-step-content" data-content-collapse="false">
+							<div class="checkout-step-content" data-content-collapse="true">
 								<div class="checkout-subtitle">
 									<p>
 										Hello, you are now logged in as <span>alex@gmail.com</span>
@@ -226,13 +226,13 @@
 									You shipping address: <span>XXX W XXX St., Apt XXX, New York, NY XXXXX.</span>
 								</p>
 							</div>
-							<form class="checkout-step-content" data-content-collapse="false">
+							<div class="checkout-step-content" data-content-collapse="false">
 								<div class="checkout-subtitle">
 									<p>
 										Enter please your shipping address.
 									</p>
 								</div>
-								<div class="checkout-form" data-content-collapse="true">
+								<form class="checkout-form">
 									<input type="text" class="field" name="firstName" placeholder="Enter your first name *" required>
 									<input type="text" class="field" name="lastName" placeholder="Enter your last name *" required>
 									<input type="text" class="field" name="street"
@@ -260,17 +260,13 @@
 									<button type="submit" class="btn btn-primary">
 										Apply
 									</button>
-								</div>
+								</form>
 
-								<div class="checkout-step-hint" data-billing="false">
+								<div class="checkout-step-hint">
 									<label class="checkbox-label">
 										<input type="checkbox" name="checkbox" class="checkbox">
 										<span class="checkbox-label-text">Billing address same</span>
 									</label>
-
-									<button type="submit" class="btn btn-primary">
-										Apply
-									</button>
 
 									<p class="hint">
 										By clicking the "APPLY" button, you confirm that you have read the <a href="#"
@@ -280,7 +276,7 @@
 										You may unsubscribe at any time by clicking the "unsubscribe" link at the bottom of any email.
 									</p>
 								</div>
-							</form>
+							</div>
 						</div>
 					</div>
 
