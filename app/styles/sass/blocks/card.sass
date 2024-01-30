@@ -3,7 +3,6 @@
 	width: 100%
 	display: flex
 	align-items: stretch
-	gap: 32px
 
 .card-image
 	width: 100px
@@ -23,37 +22,39 @@
 .card-main
 	display: flex
 	flex-direction: column
+	padding-left: 32px
+
+.card-title,
+.card-id
+	line-height: 1
+	margin-bottom: 6px
 
 .card-title
-	font-weight: 500
 	display: -webkit-box
 	-webkit-line-clamp: 1
 	-webkit-box-orient: vertical
-	font-size: 16px
-	line-height: normal
+	font-size: 20px
+	font-weight: 500
 	overflow: hidden
 	text-overflow: ellipsis
-	margin-bottom: 4px
 
 .card-id
-	font-size: 13px
-	line-height: 1
+	font-size: 16px
 	text-transform: uppercase
-	margin-bottom: 4px
 
 .card-info
 	display: flex
 	flex-direction: column
 	gap: 4px
-	font-size: 16px
+	font-size: 20px
 	line-height: 1
 	margin-top: auto
 
 .card-current
-	font-size: 9px
+	font-size: 10px
 
 .card-price
-	font-size: 13px
+	font-size: 16px
 	font-weight: 500
 
 .card-close
@@ -73,9 +74,3 @@
 		opacity: 1
 
 //** (End) Card **//
-
-
-@media (min-width: 768px)
-	
-	.card-main
-		max-width: 280px

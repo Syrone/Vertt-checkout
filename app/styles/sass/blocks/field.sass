@@ -1,6 +1,6 @@
 .field
-	--_font-size: 13px
-	--_font-weight: 400
+	--_font-size: 16px
+	--_font-weight: 300
 	--_line-height: 1
 	--_color: var(--dark-color)
 	--_placeholder-color: #909090
@@ -10,7 +10,7 @@
 	--_border-color: #909090
 	--_border-radius: 20px
 	--_padding-x: 14px
-	--_padding-y: 10px
+	--_padding-y: 8px
 	--_transition-duration: 250ms
 	--_transition-type: ease-in-out
 	min-height: var(--_height)
@@ -27,6 +27,7 @@
 	transition: color var(--_transition-duration) var(--_transition-type), background var(--_transition-duration) var(--_transition-type), border var(--_transition-duration) var(--_transition-type)
 
 	&::placeholder
+		font-family: var(--swis)
 		color: var(--_placeholder-color)
 		transition: color var(--_transition-duration) var(--_transition-type)
 
@@ -37,8 +38,8 @@
 			color: var(--_color)
 
 .wrapper-select
-	--_font-size: 13px
-	--_font-weight: 400
+	--_font-size: 16px
+	--_font-weight: 300
 	--_line-height: 1
 	--_color: var(--dark-color)
 	--_placeholder-color: #909090
@@ -57,11 +58,11 @@
 		content: ''
 		display: block
 		width: 16px
-		height: 16px
+		height: 100%
 		background-image: url(../images/icons/circle-arrow.svg)
 		background-repeat: no-repeat
 		background-position: center
-		background-size: 16px
+		background-size: contain
 		position: absolute
 		top: 50%
 		right: var(--_padding-x)

@@ -77,7 +77,19 @@
 										*Required fields
 									</span>
 								</div>
+
 								<form class="checkout-form">
+									<div class="checkout-form-header">
+										<h3 class="checkout-title">
+											Date of Birth
+										</h3>
+										<div class="checkout-subtitle">
+											<p>
+												Please see your date of Birth. We will send a special gift on your birthday.
+											</p>
+										</div>
+									</div>
+
 									<div class="checkout-select-start">
 										<div class="wrapper-select">
 											<select name="month" class="field-select" required>
@@ -196,14 +208,7 @@
 											<option value="3">Third</option>
 										</select>
 									</div>
-									<div class="wrapper-select">
-										<select class="field-select" name="city" required>
-											<option value="">City *</option>
-											<option value="1">First</option>
-											<option value="2">Second</option>
-											<option value="3">Third</option>
-										</select>
-									</div>
+									<input type="text" class="field" name="city" placeholder="City *" required>
 									<div class="wrapper-select">
 										<select class="field-select" name="state" required>
 											<option value="">State *</option>
@@ -257,11 +262,11 @@
 									</p>
 								</div>
 								<div class="checkout-form" data-content-collapse="true">
-									<input type="text" class="field" name="firstName" placeholder="Enter your first name *">
-									<input type="text" class="field" name="lastName" placeholder="Enter your last name *">
+									<input type="text" class="field" name="firstName" placeholder="Enter your first name *" required>
+									<input type="text" class="field" name="lastName" placeholder="Enter your last name *" required>
 									<input type="text" class="field" name="street"
-										placeholder="Enter your Street address (No P. O. Box) *">
-									<input type="text" class="field" name="floor" placeholder="Apt / Floor / Suite *">
+										placeholder="Enter your Street address (No P. O. Box) *" required>
+									<input type="text" class="field" name="floor" placeholder="Apt / Floor / Suite *" required>
 									<div class="wrapper-select">
 										<select class="field-select" name="country" required>
 											<option value="">Country *</option>
@@ -270,14 +275,7 @@
 											<option value="3">Third</option>
 										</select>
 									</div>
-									<div class="wrapper-select">
-										<select class="field-select" name="city" required>
-											<option value="">City *</option>
-											<option value="1">First</option>
-											<option value="2">Second</option>
-											<option value="3">Third</option>
-										</select>
-									</div>
+									<input type="text" class="field" name="city" placeholder="City *" required>
 									<div class="wrapper-select">
 										<select class="field-select" name="state" required>
 											<option value="">State *</option>
@@ -286,8 +284,8 @@
 											<option value="3">Third</option>
 										</select>
 									</div>
-									<input type="text" class="field" name="zip" placeholder="ZIP / Postal code *">
-									<input type="tel" class="field" name="phone" placeholder="Enter your phone number *">
+									<input type="text" class="field" name="zip" placeholder="ZIP / Postal code *" required>
+									<input type="tel" class="field" name="phone" placeholder="Enter your phone number *" required>
 									<button type="submit" class="btn btn-primary">
 										Apply
 									</button>
@@ -333,16 +331,16 @@
 									</p>
 								</div>
 								<form class="checkout-form checkout-form--method">
-									<button type="button" class="btn btn-primary is-active">
+									<button type="button" class="btn btn-primary btn-toggle-method is-active">
 										Standard
 									</button>
-									<button type="button" class="btn btn-primary">
+									<button type="button" class="btn btn-primary btn-toggle-method">
 										Priority
 									</button>
-									<button type="button" class="btn btn-primary">
+									<button type="button" class="btn btn-primary btn-toggle-method">
 										Express
 									</button>
-									<button type="button" class="btn btn-primary">
+									<button type="button" class="btn btn-primary btn-toggle-method">
 										International
 									</button>
 									

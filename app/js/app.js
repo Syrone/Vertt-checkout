@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
 				const isCollapse = content.getAttribute('data-content-collapse') === 'true';
 
 				if (isCollapse) {
-					content.style.maxHeight = `${content.scrollHeight}px`;
+					content.style.height = `${content.scrollHeight}px`;
 					setTimeout(() => {
-						content.style.maxHeight = '100%';
+						content.style.height = '100%';
 					}, 600);
 				} else {
-					content.style.maxHeight = `${content.scrollHeight}px`;
+					content.style.height = `${content.scrollHeight}px`;
 					setTimeout(() => {
 						content.style = '';
 					}, 600);
@@ -34,9 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			const isCollapse = content.getAttribute('data-content-collapse') === 'true';
 
 			if (isCollapse) {
-				content.style.maxHeight = `${content.scrollHeight}px`;
+				content.style.height = `${content.scrollHeight}px`;
 				setTimeout(() => {
-					content.style.maxHeight = '100%';
+					content.style.height = '100%';
 				}, 600);
 			}
 
@@ -53,10 +53,26 @@ document.addEventListener('DOMContentLoaded', () => {
 				content.setAttribute('data-content-collapse', isChecked ? 'false' : 'true');
 				setTimeout(() => {
 					checkbox.setAttribute('data-billing', isChecked ? 'true' : 'false');
-				}, isChecked ? 850 : 450);
+				}, isChecked ? 900 : 400);
 				contentAttributeChange([{ target: content }]);
 			});
 		});
 	}
 
+
+	const toggleMethodButtons = document.querySelectorAll('.btn-toggle-method');
+
+	function handleButtonClick(event) {
+		toggleMethodButtons.forEach((button) => {
+			button.classList.remove('is-active');
+		});
+
+		event.currentTarget.classList.add('is-active');
+	}
+
+	if (toggleMethodButtons.length > 0) {
+		toggleMethodButtons.forEach((button) => {
+			button.addEventListener('click', handleButtonClick);
+		});
+	}
 })

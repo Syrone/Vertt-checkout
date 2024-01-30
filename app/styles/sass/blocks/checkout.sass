@@ -4,7 +4,7 @@
 
 	& > .container
 		display: grid
-		grid-template-columns: 1fr .5fr
+		grid-template-columns: minmax(560px, 800px) minmax(320px, 540px)
 		align-items: flex-start
 		gap: 20%
 
@@ -106,7 +106,7 @@
 		margin-top: 2px
 
 .checkout-title
-	font-size: 16px
+	font-size: 20px
 	font-weight: 500
 	line-height: 1
 	margin-bottom: 4px
@@ -118,12 +118,13 @@
 	align-items: flex-start
 	justify-content: space-between
 	gap: 24px
-	font-size: 10px
+	font-size: 12px
+	font-weight: 300
 	line-height: normal
 	margin-bottom: 24px
 
 	p
-		max-width: 240px
+		max-width: 300px
 
 .required
 	white-space: nowrap
@@ -132,15 +133,15 @@
 
 .hint
 	display: block
-	font-size: 10px
+	font-size: 12px
 	font-weight: 300
 	line-height: normal
 	margin-left: auto
 
 [data-content-collapse]
-	max-height: 0px
+	height: 0px
 	overflow: hidden
-	transition: max-height 600ms ease-in-out
+	transition: height 600ms ease-in-out
 
 //** (Start) First Content First Step **//
 .checkout-form
@@ -163,6 +164,19 @@
 		& > *
 			flex: 0 0 calc( 50% - 24px )
 
+.checkout-form-header
+	width: 100%
+	flex-basis: 100%
+
+	.checkout-title
+		font-size: 16px
+
+	.checkout-subtitle
+		margin: initial
+
+		p
+			max-width: initial
+
 .checkout-form--method
 
 	& > .btn[type="submit"]
@@ -177,7 +191,7 @@
 
 	.hint
 		font-size: 9px
-		color: var(--gray-color)
+		color: #808080
 		margin: initial
 
 [data-billing="false"]
@@ -237,20 +251,20 @@
 	align-items: flex-end
 	justify-content: space-between
 	gap: 24px
-	font-size: 10px
-
-.checkout-info-start
-	width: 100%
-	max-width: initial
+	font-size: 12px
 
 	.checkout-title
-		font-size: 13px
+		font-size: 16px
 
 	.checkout-subtitle
 		margin: initial
 
 		p
 			max-width: initial
+
+.checkout-info-start
+	width: 100%
+	max-width: initial
 //** (End) Third Content First Step **//
 
 //** (Start) Checkout Aside **//
@@ -276,6 +290,7 @@
 	width: 100%
 	display: flex
 	justify-content: space-between
+	font-size: 20px
 	font-weight: 500
 	line-height: normal
 
@@ -313,15 +328,15 @@
 	margin-bottom: 6px
 
 .order-total-title
-	font-size: 16px
+	font-size: 20px
 	line-height: 1
 
 .order-total-subtitle
-	font-size: 13px
+	font-size: 16px
 	line-height: normal
 
 .order-total-text
-	font-size: 10px
+	font-size: 12px
 	font-weight: 300
 	line-height: normal
 
@@ -337,7 +352,7 @@
 	.checkout
 
 		& > .container
-			gap: 12%
+			gap: 8%
 
 @media (max-width: 1200px)
 
@@ -357,6 +372,10 @@
 
 			& > *
 				flex: 0 0 calc( 50% - 12px )
+
+	.checkout-form-header
+		width: 100%
+		flex-basis: 100%
 
 @media (max-width: 1024px)
 
@@ -393,6 +412,10 @@
 
 		p
 			max-width: initial
+
+	.checkout-form-header
+		width: 100%
+		flex-basis: 100%
 
 @media (max-width: 576px)
 
