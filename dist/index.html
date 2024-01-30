@@ -218,11 +218,11 @@
 									</p>
 								</div>
 								<div class="checkout-form" data-content-collapse="true">
-									<input type="text" class="field" name="firstName" placeholder="Enter your first name *">
-									<input type="text" class="field" name="lastName" placeholder="Enter your last name *">
+									<input type="text" class="field" name="firstName" placeholder="Enter your first name *" required>
+									<input type="text" class="field" name="lastName" placeholder="Enter your last name *" required>
 									<input type="text" class="field" name="street"
-										placeholder="Enter your Street address (No P. O. Box) *">
-									<input type="text" class="field" name="floor" placeholder="Apt / Floor / Suite *">
+										placeholder="Enter your Street address (No P. O. Box) *" required>
+									<input type="text" class="field" name="floor" placeholder="Apt / Floor / Suite *" required>
 									<div class="wrapper-select">
 										<select class="field-select" name="country" required>
 											<option value="">Country *</option>
@@ -240,8 +240,8 @@
 											<option value="3">Third</option>
 										</select>
 									</div>
-									<input type="text" class="field" name="zip" placeholder="ZIP / Postal code *">
-									<input type="tel" class="field" name="phone" placeholder="Enter your phone number *">
+									<input type="text" class="field" name="zip" placeholder="ZIP / Postal code *" required>
+									<input type="tel" class="field" name="phone" placeholder="Enter your phone number *" required>
 									<button type="submit" class="btn btn-primary">
 										Apply
 									</button>
@@ -381,7 +381,7 @@
 						</div>
 					</div>
 
-					<div class="checkout-step" data-step-collapse="false">
+					<div class="checkout-step" data-step-collapse="true">
 						<span class="checkout-step-current">
 							5
 						</span>
@@ -389,51 +389,47 @@
 							<h2 class="checkout-title">
 								Gift options
 							</h2>
-							<div class="checkout-step-content" data-content-collapse="false">
-								<div class="checkout-subtitle">
-									<p>
-										Please enter your information to continue as a new client or sing in to your personal account.
-									</p>
-									<span class="required">
-										*Required fields
-									</span>
-								</div>
-								<form class="checkout-form">
-									<div class="checkout-signin-start">
-										<input type="email" name="email" class="field" placeholder="Enter your email *" required>
-										<input type="password" name="password" class="field" placeholder="Enter password *" required>
-
-										<div class="checkout-step-end">
-											<label class="checkbox-label">
-												<input type="checkbox" name="checkbox" class="checkbox">
-												<span class="checkbox-label-text">Remember Me</span>
-											</label>
-
-											<span class="hint">
-												Forgot your <a href="#" class="btn btn-link">password</a>?
-											</span>
+							<div class="checkout-step-content checkout-step-gift" data-content-collapse="true">
+								<form class="checkout-form checkout-form-gift">
+									<div class="checkout-form-header">
+										<div class="checkout-subtitle">
+											<p>
+												Enter please the number of the coupon.
+											</p>
 										</div>
 									</div>
-
-									<div class="checkout-signin-end">
-										<button type="submit" class="btn btn-primary">
-											Sign in
-										</button>
-										<button type="button" class="btn btn-apple">
-											<span class="icon">
-												<svg>
-													<use xlink:href="./images/icons/apple.svg#svg-apple"></use>
-												</svg>
-											</span>
-											Sign in with Apple
-										</button>
-
-										<div class="checkout-step-end">
-											<span class="hint">
-												No <a href="#" class="btn btn-link">account</a> yet?
-											</span>
+									<input type="text" name="coupon" class="field" data-success-placeholder="You have successfully applied the coupon" placeholder="Number" required>
+									<button type="submit" class="btn btn-primary">
+										Apply
+									</button>
+								</form>
+								<form class="checkout-form checkout-form-gift">
+									<div class="checkout-form-header">
+										<div class="checkout-subtitle">
+											<p>
+												Enter please your gift card number.
+											</p>
 										</div>
 									</div>
+									<input type="text" name="giftNumber" class="field" data-success-placeholder="You have successfully applied the gift card" placeholder="Number" required>
+									<button type="submit" class="btn btn-primary">
+										Apply
+									</button>
+								</form>
+								<form class="checkout-form checkout-form-points">
+									<div class="checkout-gift-header">
+										<h2 class="checkout-title">
+											You have <span>XX</span> Points.
+										</h2>
+										<div class="checkout-subtitle">
+											<p>
+												Use <span>XX</span> points to get discount of <span>$XX.XX</span> on this order.
+											</p>
+										</div>
+									</div>
+									<button type="submit" class="btn btn-primary">
+										Apply
+									</button>
 								</form>
 							</div>
 						</div>

@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+	//** (Start) Checkout Step Collapse and Billing Collapse **//
 	const collapseContents = document.querySelectorAll('[data-content-collapse]')
 	const checkboxBilling = document.querySelectorAll('[data-billing]')
 
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					content.style.height = `${content.scrollHeight}px`;
 					setTimeout(() => {
 						content.style = '';
-					}, 600);
+					}, 700);
 				}
 			}
 		});
@@ -58,8 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		});
 	}
+	//** (Start) Checkout Step Collapse and Billing Collapse **//
 
 
+	//** (Start) Checkout Step Shipping Method **//
 	const toggleMethodButtons = document.querySelectorAll('.btn-toggle-method');
 
 	function handleButtonClick(event) {
@@ -75,4 +78,37 @@ document.addEventListener('DOMContentLoaded', () => {
 			button.addEventListener('click', handleButtonClick);
 		});
 	}
+	//** (Start) Checkout Step Shipping Method **//
+
+	//** (Start) Checkout Step Gift Card **//
+	const checkoutFormGifts = document.querySelectorAll('.checkout-form-gift')
+
+	if (checkoutFormGifts.length > 0) {
+		checkoutFormGifts.forEach((form) => {
+			const input = form.querySelector('input')
+			const submit = form.querySelector('button[type="submit"]')
+
+			if (submit) {
+				submit.addEventListener('click', (event) => {
+					event.preventDefault();
+		
+					submit.classList.add('is-active');
+					setTimeout(() => {
+						submit.textContent = 'successful';
+
+						if (input) {
+							const successPlaceholder = input.dataset.successPlaceholder;
+					
+							if (successPlaceholder) {
+								input.value = '';
+								input.readOnly = true;
+								input.placeholder = successPlaceholder;
+							}
+						}
+					}, 1000);
+				});
+			}
+		})
+	}
+	//** (End) Checkout Step Gift Card **//
 })
