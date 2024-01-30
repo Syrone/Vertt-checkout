@@ -79,13 +79,32 @@
 	100%
 		height: 0
 
+[data-complete-collapse="true"]
+
+	.checkout-subtitle
+		display: flex
+		margin: initial
+
+		p
+			max-width: initial
+
+[data-complete-collapse="false"]
+
+	.checkout-step-inner
+
+		& > .checkout-subtitle
+			display: none
+
+	[data-open-collapse]
+		display: none
+
 .checkout-step-current
 	min-width: 20px
 	min-height: 20px
 	display: flex
 	align-items: center
 	justify-content: center
-	font-size: 10px
+	font-size: 12px
 	font-weight: 600
 	line-height: 1
 	color: var(--dark-color)
@@ -103,7 +122,13 @@
 	transition: padding 250ms ease-in-out
 
 	& > .checkout-title
-		margin-top: 2px
+		display: flex
+		align-items: flex-start
+		justify-content: space-between
+
+		.btn-link
+			font-size: 12px
+			font-weight: 300
 
 .checkout-title
 	font-size: 20px
@@ -324,6 +349,20 @@
 	.checkout-subtitle
 		margin: initial
 //** (End) Checkout Gift **//
+
+//** (Start) Checkout Final **//
+.checkout-final-content
+
+	.list
+		font-weight: 300
+		margin-bottom: 48px
+
+	.checkout-step-end
+		margin-bottom: 24px
+
+	.btn
+		max-width: 360px
+//** (End) Checkout Final **//
 
 //** (Start) Checkout Aside **//
 .checkout-order

@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				if (isCollapse) {
 					content.style.height = `${content.scrollHeight}px`;
 					setTimeout(() => {
-						content.style.height = '100%';
+						content.style.height = 'auto';
 					}, 600);
 				} else {
 					content.style.height = `${content.scrollHeight}px`;
@@ -31,13 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	if (collapseContents.length > 0) {
 		collapseContents.forEach((content) => {
-
 			const isCollapse = content.getAttribute('data-content-collapse') === 'true';
 
 			if (isCollapse) {
 				content.style.height = `${content.scrollHeight}px`;
 				setTimeout(() => {
-					content.style.height = '100%';
+					content.style.height = 'auto';
 				}, 600);
 			}
 
@@ -61,6 +60,28 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	//** (Start) Checkout Step Collapse and Billing Collapse **//
 
+	//** (Start) Checkout Step Collapse Open Button **//
+	const completeSteps = document.querySelectorAll('[data-complete-collapse]')
+
+	if (completeSteps.length > 0) {
+		completeSteps.forEach((complete) => {
+			const openCollapse = complete.querySelector('[data-open-collapse]')
+			const contentCollapse = complete.querySelector('[data-content-collapse]')
+
+			const isCompleted = complete.getAttribute('data-complete-collapse') === 'true'
+
+			if (isCompleted) {
+
+				if (openCollapse) {
+					openCollapse.addEventListener('click', () => {
+						complete.setAttribute('data-complete-collapse', 'false')
+						contentCollapse.setAttribute('data-content-collapse', 'true')
+					})
+				}
+			}
+		})
+	}
+	//** (End) Checkout Step Collapse Open Button **//
 
 	//** (Start) Checkout Step Shipping Method **//
 	const toggleMethodButtons = document.querySelectorAll('.btn-toggle-method');

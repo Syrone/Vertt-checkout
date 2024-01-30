@@ -35,7 +35,7 @@
 		<div class="checkout">
 			<div class="container wr">
 				<div class="checkout-inner">
-					<div class="checkout-step" data-step-collapse="true">
+					<div class="checkout-step" data-step-collapse="true" data-complete-collapse="true">
 						<span class="checkout-step-current">
 							1
 						</span>
@@ -43,7 +43,15 @@
 							<h2 class="checkout-title">
 								Contact information
 							</h2>
-							<div class="checkout-step-content" data-content-collapse="true">
+							<div class="checkout-subtitle">
+								<p>
+									Hello, you are now logged in as <span>alex@gmail.com</span>
+								</p>
+								<span class="required">
+									*Required fields
+								</span>
+							</div>
+							<div class="checkout-step-content" data-content-collapse="false">
 								<div class="checkout-subtitle">
 									<p>
 										Please enter your information to continue as a new client or sing in to your personal account.
@@ -91,7 +99,7 @@
 								</form>
 							</div>
 
-							<div class="checkout-step-content" data-content-collapse="true">
+							<div class="checkout-step-content" data-content-collapse="false">
 								<div class="checkout-subtitle">
 									<p>
 										Hello, you are now logged in as <span>alex@gmail.com</span>
@@ -164,7 +172,7 @@
 								</form>
 							</div>
 
-							<div class="checkout-step-content" data-content-collapse="true">
+							<div class="checkout-step-content" data-content-collapse="false">
 								<div class="checkout-subtitle">
 									<p>
 										Hello, you are now logged in as <span>alex@gmail.com</span>
@@ -203,15 +211,22 @@
 						</div>
 					</div>
 
-					<div class="checkout-step" data-step-collapse="true">
+					<div class="checkout-step" data-step-collapse="true" data-complete-collapse="true">
 						<span class="checkout-step-current">
 							2
 						</span>
 						<div class="checkout-step-inner">
 							<h2 class="checkout-title">
 								Shipping address
+
+								<button type="button" class="btn btn-link" data-open-collapse>Edit</button>
 							</h2>
-							<form class="checkout-step-content" data-content-collapse="true">
+							<div class="checkout-subtitle">
+								<p>
+									You shipping address: <span>XXX W XXX St., Apt XXX, New York, NY XXXXX.</span>
+								</p>
+							</div>
+							<form class="checkout-step-content" data-content-collapse="false">
 								<div class="checkout-subtitle">
 									<p>
 										Enter please your shipping address.
@@ -269,15 +284,22 @@
 						</div>
 					</div>
 
-					<div class="checkout-step" data-step-collapse="true">
+					<div class="checkout-step" data-step-collapse="true" data-complete-collapse="true">
 						<span class="checkout-step-current">
 							3
 						</span>
 						<div class="checkout-step-inner">
 							<h2 class="checkout-title">
 								Billing address
+
+								<button type="button" class="btn btn-link" data-open-collapse>Edit</button>
 							</h2>
-							<form class="checkout-step-content" data-content-collapse="true">
+							<div class="checkout-subtitle">
+								<p>
+									You shipping address: <span>XXX W XXX St., Apt XXX, New York, NY XXXXX.</span>
+								</p>
+							</div>
+							<form class="checkout-step-content" data-content-collapse="false">
 								<div class="checkout-subtitle">
 									<p>
 										Enter please your billing address.
@@ -335,15 +357,22 @@
 						</div>
 					</div>
 
-					<div class="checkout-step" data-step-collapse="true">
+					<div class="checkout-step" data-step-collapse="true" data-complete-collapse="true">
 						<span class="checkout-step-current">
 							4
 						</span>
 						<div class="checkout-step-inner">
 							<h2 class="checkout-title">
 								Shipping method
+
+								<button type="button" class="btn btn-link" data-open-collapse>Edit</button>
 							</h2>
-							<div class="checkout-step-content" data-content-collapse="true">
+							<div class="checkout-subtitle">
+								<p>
+									You shipping method: <span>Standard (Free)</span>.
+								</p>
+							</div>
+							<div class="checkout-step-content" data-content-collapse="false">
 								<div class="checkout-subtitle">
 									<p>
 										Select a shipping method.
@@ -381,15 +410,22 @@
 						</div>
 					</div>
 
-					<div class="checkout-step" data-step-collapse="true">
+					<div class="checkout-step" data-step-collapse="true" data-complete-collapse="true">
 						<span class="checkout-step-current">
 							5
 						</span>
 						<div class="checkout-step-inner">
 							<h2 class="checkout-title">
 								Gift options
+
+								<button type="button" class="btn btn-link" data-open-collapse>Edit</button>
 							</h2>
-							<div class="checkout-step-content checkout-step-gift" data-content-collapse="true">
+							<div class="checkout-subtitle">
+								<p>
+									You have successfully redeemed your gift card, coupon or points.
+								</p>
+							</div>
+							<div class="checkout-step-content checkout-step-gift" data-content-collapse="false">
 								<form class="checkout-form checkout-form-gift">
 									<div class="checkout-form-header">
 										<div class="checkout-subtitle">
@@ -448,15 +484,22 @@
 						</div>
 					</div>
 
-					<div class="checkout-step" data-step-collapse="true">
+					<div class="checkout-step" data-step-collapse="true" data-complete-collapse="true">
 						<span class="checkout-step-current">
 							6
 						</span>
 						<div class="checkout-step-inner">
 							<h2 class="checkout-title">
 								Payment method
+
+								<button type="button" class="btn btn-link" data-open-collapse>Edit</button>
 							</h2>
-							<div class="checkout-step-content" data-content-collapse="true">
+							<div class="checkout-subtitle">
+								<p>
+									You payment method: <span>Credit or Debit Card</span>.
+								</p>
+							</div>
+							<div class="checkout-step-content" data-content-collapse="false">
 								<div class="checkout-subtitle">
 									<p>
 										Select a payment method.
@@ -550,60 +593,51 @@
 						</div>
 					</div>
 
-					<div class="checkout-step" data-step-collapse="false">
+					<div class="checkout-step" data-step-collapse="true">
 						<span class="checkout-step-current">
 							7
 						</span>
 						<div class="checkout-step-inner">
 							<h2 class="checkout-title">
-								Order completed
+								Final review
 							</h2>
-							<div class="checkout-step-content" data-content-collapse="false">
+							<div class="checkout-step-content checkout-final-content" data-content-collapse="true">
 								<div class="checkout-subtitle">
 									<p>
-										Please enter your information to continue as a new client or sing in to your personal account.
+										Good job.
 									</p>
-									<span class="required">
-										*Required fields
-									</span>
 								</div>
-								<form class="checkout-form">
-									<div class="checkout-signin-start">
-										<input type="email" name="email" class="field" placeholder="Enter your email *" required>
-										<input type="password" name="password" class="field" placeholder="Enter password *" required>
+								<ul class="list">
+									<li>
+										Dxxx Dxxxx
+									</li>
+									<li>
+										Shipping: <span>XXX W XXX St., Apt. XX, New York, NY XXXXX, US. | Ph.: 1 (917) 000 - 5055</span>
+									</li>
+									<li>
+										Billing: <span>XXX W XXX St., Apt. XX, New York, NY XXXXX, US. | Ph.: 1 (917) 000 - 5055</span>
+									</li>
+									<li>
+										Shipping: <span>Standard (Free)</span>
+									</li>
+									<li>
+										Gift: <span>Coupon | Gift Card | Points</span>
+									</li>
+									<li>
+										Card: <span>***********XXXX</span>
+									</li>
+								</ul>
 
-										<div class="checkout-step-end">
-											<label class="checkbox-label">
-												<input type="checkbox" name="checkbox" class="checkbox">
-												<span class="checkbox-label-text">Remember Me</span>
-											</label>
+								<div class="checkout-step-end">
+									<label class="checkbox-label">
+										<input type="checkbox" name="checkbox" class="checkbox">
+										<span class="checkbox-label-text">I agree to the <a href="#" class="btn btn-link">Terms of use</a>.</span>
+									</label>
+								</div>
 
-											<span class="hint">
-												Forgot your <a href="#" class="btn btn-link">password</a>?
-											</span>
-										</div>
-									</div>
-
-									<div class="checkout-signin-end">
-										<button type="submit" class="btn btn-primary">
-											Sign in
-										</button>
-										<button type="button" class="btn btn-apple">
-											<span class="icon">
-												<svg>
-													<use xlink:href="./images/icons/apple.svg#svg-apple"></use>
-												</svg>
-											</span>
-											Sign in with Apple
-										</button>
-
-										<div class="checkout-step-end">
-											<span class="hint">
-												No <a href="#" class="btn btn-link">account</a> yet?
-											</span>
-										</div>
-									</div>
-								</form>
+								<a href="#" class="btn btn-primary">
+									Place order
+								</a>
 							</div>
 						</div>
 					</div>
