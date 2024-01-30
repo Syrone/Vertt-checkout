@@ -40,6 +40,7 @@
 
 .card-id
 	font-size: 16px
+	font-weight: 300
 	text-transform: uppercase
 
 .card-info
@@ -51,7 +52,8 @@
 	margin-top: auto
 
 .card-current
-	font-size: 10px
+	font-size: 12px
+	font-weight: 300
 
 .card-price
 	font-size: 16px
@@ -73,4 +75,33 @@
 	&:is(:active, .is-active)
 		opacity: 1
 
+
+.card-also
+
+	.card-main
+		max-width: 180px
+
+	.card-title
+		-webkit-line-clamp: 2
+		font-size: 16px
+		line-height: 1.5
+
+	.btn-primary
+		--_height: 30px
+		--_font-size: 16px
+		margin-top: 4px
 //** (End) Card **//
+
+@media (max-width: 768px)
+
+	.card-also
+		
+		.card-main
+			max-width: 240px
+
+@media (max-width: 576px)
+
+	.card-also
+		
+		.card-main
+			max-width: 100%

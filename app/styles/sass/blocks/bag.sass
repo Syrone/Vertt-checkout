@@ -1,0 +1,66 @@
+.bag
+	margin-top: 40px
+	margin-bottom: 40px
+
+	& > .container
+		flex-wrap: wrap
+		align-items: flex-start
+		justify-content: space-between
+		gap: 0 40px
+
+.bag-inner
+	flex: 0 0 560px
+
+.bag-aside
+	flex: 0 0 360px
+
+.bag-title
+	font-size: 20px
+	font-weight: 500
+
+.also-list
+
+	& > li
+		padding: 24px 0
+		
+		&:not(:last-child)
+			border-bottom: 1px solid #d2d2d2
+
+.bag-id
+	font-size: 12px
+	font-weight: 500
+	line-height: normal
+	color: var(--gray-color)
+	margin-top: 12px
+
+@media (max-width: 1200px)
+
+	.bag-inner
+		flex-basis: 480px
+
+@media (max-width: 1024px)
+
+	.bag
+
+		& > .container
+			padding: 0 16px
+
+@media (max-width: 992px)
+
+	.bag-inner,
+	.bag-aside
+		flex-basis: calc( 50% - 20px )
+
+@media (max-width: 768px)
+
+	.bag-inner
+		flex-basis: 100%
+
+	.bag-aside
+		flex-basis: auto
+		margin-top: 40px
+
+@media (max-width: 576px)
+
+	.bag-aside
+		flex-basis: 100%
