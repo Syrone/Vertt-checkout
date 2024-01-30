@@ -60,6 +60,32 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	//** (Start) Checkout Step Collapse and Billing Collapse **//
 
+	//** (Start) Checkout Step Collapse **//
+	const checkoutSteps = document.querySelectorAll('[data-step-collapse]')
+
+	function stepAttributeChange(mutationsList) {
+		mutationsList.forEach((mutation) => {
+			if (mutation.attributeName === 'data-step-collapse') {
+				const step = mutation.target;
+				const isCollapse = step.getAttribute('data-step-collapse') === 'true';
+				const contentCollapse = step.querySelector('[data-content-collapse]');
+	
+				if (contentCollapse) {
+					contentCollapse.setAttribute('data-content-collapse', isCollapse);
+				}
+			}
+		});
+	}
+	
+	const observerStepCollapse = new MutationObserver(stepAttributeChange);
+
+	if (checkoutSteps.length > 0) {
+		checkoutSteps.forEach((step) => {
+			observerStepCollapse.observe(step, { attributes: true });
+		})
+	}
+	//** (End) Checkout Step Collapse **//
+
 	//** (Start) Checkout Step Collapse Open Button **//
 	const completeSteps = document.querySelectorAll('[data-complete-collapse]')
 

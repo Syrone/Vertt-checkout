@@ -8,6 +8,37 @@
 		align-items: flex-start
 		gap: 20%
 
+.checkout-detail
+
+	& > .container
+		grid-template-columns: 1fr 300px
+
+	.list
+		font-weight: 300
+		margin-top: 48px
+		margin-bottom: 48px
+
+		h4
+			font-weight: 500
+
+		& > li
+			display: block
+
+			img
+				vertical-align: middle
+
+	h3.checkout-title
+		font-size: 16px
+
+	.checkout-subtitle
+
+		p
+			max-width: initial
+
+	.btn-primary
+		max-width: 360px
+		margin-top: 24px
+
 .checkout-step
 	width: 100%
 	display: flex
@@ -530,3 +561,9 @@
 
 		p
 			max-width: 240px
+
+	.checkout-detail,
+	.checkout-final-content
+
+		.btn-primary
+			max-width: initial
