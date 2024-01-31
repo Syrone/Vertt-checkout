@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const observerContentCollapse = new MutationObserver(contentAttributeChange);
 
 	if (collapseContents.length > 0) {
+
 		collapseContents.forEach((content) => {
 			const isCollapse = content.getAttribute('data-content-collapse') === 'true';
 
@@ -58,7 +59,26 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		});
 	}
-	//** (Start) Checkout Step Collapse and Billing Collapse **//
+	//** (End) Checkout Step Collapse and Billing Collapse **//
+
+	//** (Start) Checkout Content Back **//
+	const mainCollapse = document.querySelectorAll('[data-edit-collapse]')
+
+	if (mainCollapse.length > 0) {
+		mainCollapse.forEach((edit) => {
+			const previous = edit.previousElementSibling
+			const back = edit.querySelector('[data-edit-back]')
+			if (back) {
+				back.addEventListener('click', () => {
+					edit.setAttribute('data-content-collapse', 'false')
+					setTimeout(() => {
+						previous.setAttribute('data-content-collapse', 'true')
+					}, 600);
+				})
+			}
+		})
+	}
+	//** (End) Checkout Content Back **//
 
 	//** (Start) Checkout Step Collapse **//
 	const checkoutSteps = document.querySelectorAll('[data-step-collapse]')
@@ -188,6 +208,8 @@ document.addEventListener('DOMContentLoaded', () => {
 						btn.addEventListener('click', () => {
 							if (isCompleted) {
 								complete.setAttribute('data-complete-collapse', isCompleted)
+							} else {
+								complete.setAttribute('data-complete-collapse', !isCompleted)
 							}
 						})
 					}
