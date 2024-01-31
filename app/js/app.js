@@ -128,7 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			const checkoutFormGifts = complete.querySelectorAll('[data-form-gift]')
 
 			if (checkoutFormGifts.length > 0) {
-				let isSubmitButtonActivated = false
 
 				checkoutFormGifts.forEach((form) => {
 					const input = form.querySelector('input')
@@ -137,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					if (submit) {
 						submit.addEventListener('click', (event) => {
 
-							if (!isSubmitButtonActivated && input && input.required && input.value.trim() === '') {
+							if (input && input.required && input.value.trim() === '') {
 								event.preventDefault();
 								input.classList.add('is-error');
 
@@ -152,31 +151,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 							event.preventDefault();
 
-							if (!isSubmitButtonActivated) {
-								isSubmitButtonActivated = true
-								submit.classList.add('is-active');
-								setTimeout(() => {
-									submit.textContent = 'successful';
+							submit.classList.add('is-active');
+							setTimeout(() => {
+								submit.textContent = 'successful';
 
-									if (input) {
-										const successPlaceholder = input.dataset.successPlaceholder;
+								if (input) {
+									const successPlaceholder = input.dataset.successPlaceholder;
 
-										if (successPlaceholder) {
-											input.value = '';
-											input.readOnly = true;
-											input.placeholder = successPlaceholder;
-										}
+									if (successPlaceholder) {
+										input.value = '';
+										input.readOnly = true;
+										input.placeholder = successPlaceholder;
 									}
+								}
 
-									closeCollapse.forEach((closes) => {
-										const isFalse = closes.getAttribute('data-close-collapse') === 'false'
-					
-										if (isFalse) {
-											closes.setAttribute('data-close-collapse', 'true')
-										}
-									})
-								}, 1000);
-							}
+								closeCollapse.forEach((closes) => {
+									const isFalse = closes.getAttribute('data-close-collapse') === 'false'
+				
+									if (isFalse) {
+										closes.setAttribute('data-close-collapse', 'true')
+									}
+								})
+							}, 1000);
 						});
 					}
 				})
