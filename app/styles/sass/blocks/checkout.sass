@@ -273,6 +273,7 @@
 		display: none
 
 	& > *
+		width: 100%
 		flex: 0 0 calc( 50% - 24px )
 
 	& > .checkout-step-end,
@@ -521,8 +522,16 @@
 		& > .container
 			gap: 40px
 
+	.checkout-form--payment,
 	.checkout-form
 		gap: 24px
+
+	.checkout-form--payment
+
+		& > *
+			flex-basis: calc( 50% - 12px )
+
+	.checkout-form
 
 		& > *
 			flex-basis: calc( 50% - 12px )
@@ -599,3 +608,8 @@
 
 		.btn-primary
 			max-width: initial
+
+	.checkout-form--payment
+		
+		& > .checkout-step-end
+			flex-wrap: wrap
