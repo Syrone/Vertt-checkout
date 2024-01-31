@@ -31,7 +31,6 @@
 			left: 0
 
 	.list
-		font-weight: 300
 		margin-top: 48px
 		margin-bottom: 48px
 
@@ -419,7 +418,6 @@
 .checkout-final-content
 
 	.list
-		font-weight: 300
 		margin-bottom: 48px
 
 	.checkout-step-end
@@ -464,7 +462,7 @@
 		flex-basis: 100%
 
 .order-details
-	font-size: 10px
+	font-size: 14px
 	font-weight: 300
 	line-height: normal
 	list-style: none
@@ -505,8 +503,8 @@
 	line-height: normal
 
 .order-total-text
-	font-size: 12px
-	font-weight: 300
+	font-size: 14px
+	font-weight: 400
 	line-height: normal
 
 	img
@@ -616,6 +614,14 @@
 
 		.btn-primary
 			max-width: initial
+
+	.checkout-final-content
+
+		.list
+
+			& > li
+				display: grid
+				grid-template-columns: 9ch 1fr
 
 	.checkout-form--payment
 		

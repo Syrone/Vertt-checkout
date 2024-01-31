@@ -41,7 +41,7 @@ function browsersync() {
 }
 
 function scripts() {
-	return src(['app/js/*.js', '!app/js/*.min.js'])
+	return src(['app/js/*.js', '!app/js/*.min.js', '!app/js/*.bundle.js'])
 		.pipe(webpackStream({
 			mode: 'production',
 			performance: { hints: false },
@@ -61,18 +61,18 @@ function scripts() {
 				]
 			},
 			optimization: {
-				minimize: true,
+				minimize: false,
 				minimizer: [
 					new TerserPlugin({
-						terserOptions: { format: { comments: false } },
-						extractComments: false
+						terserOptions: { format: { comments: true } },
+						extractComments: true
 					})
 				]
 			},
 		}, webpack)).on('error', (err) => {
 			this.emit('end')
 		})
-		.pipe(concat('app.min.js'))
+		.pipe(concat('app.bundle.js'))
 		.pipe(dest('app/js'))
 		.pipe(browserSync.stream())
 }
@@ -83,9 +83,9 @@ function styles() {
 		.pipe(eval(preprocessor)({ 'include css': true }))
 		.pipe(postCss([
 			autoprefixer({ grid: 'autoplace' }),
-			cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })
+			// cssnano({ preset: ['default', { discardComments: { removeAll: false } }] })
 		]))
-		.pipe(concat('app.min.css'))
+		.pipe(concat('checkout.bundle.css'))
 		.pipe(dest('app/css'))
 		.pipe(browserSync.stream())
 }
@@ -100,7 +100,7 @@ function images() {
 
 function buildcopy() {
 	return src([
-		'{app/js,app/css}/*.min.*',
+		'app/{js,css}/*.{min,bundle}.*',
 		'app/images/**/*.*',
 		'!app/images/src/**/*',
 		'app/fonts/**/*'
@@ -136,7 +136,7 @@ function deploy() {
 
 function startwatch() {
 	watch(`app/styles/${preprocessor}/**/*`, { usePolling: true }, styles)
-	watch(['app/js/**/*.js', '!app/js/**/*.min.js'], { usePolling: true }, scripts)
+	watch(['app/js/**/*.js', '!app/js/**/*.bundle.js'], { usePolling: true }, scripts)
 	watch('app/images/src/**/*', { usePolling: true }, images)
 	watch(`app/**/*.{${fileswatch}}`, { usePolling: true }).on('change', browserSync.reload)
 }
