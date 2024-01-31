@@ -69,14 +69,14 @@ document.addEventListener('DOMContentLoaded', () => {
 				const step = mutation.target;
 				const isCollapse = step.getAttribute('data-step-collapse') === 'true';
 				const contentCollapse = step.querySelector('[data-content-collapse]');
-	
+
 				if (contentCollapse) {
 					contentCollapse.setAttribute('data-content-collapse', isCollapse);
 				}
 			}
 		});
 	}
-	
+
 	const observerStepCollapse = new MutationObserver(stepAttributeChange);
 
 	if (checkoutSteps.length > 0) {
@@ -105,6 +105,101 @@ document.addEventListener('DOMContentLoaded', () => {
 					})
 				}
 			}
+
+			const observerCompleteStep = new MutationObserver((mutations) => {
+				mutations.forEach((mutation) => {
+					if (
+						mutation.type === 'attributes' &&
+						mutation.attributeName === 'data-complete-collapse'
+					) {
+						const newIsCompleted = complete.getAttribute('data-complete-collapse') === 'true';
+						if (contentCollapse) {
+							contentCollapse.setAttribute('data-content-collapse', !newIsCompleted)
+						} else {
+							contentCollapse.setAttribute('data-content-collapse', newIsCompleted)
+						}
+					}
+				});
+			});
+
+			observerCompleteStep.observe(complete, { attributes: true });
+
+			//** (Start) Checkout Step Gift Card **//
+			const checkoutFormGifts = complete.querySelectorAll('[data-form-gift]')
+
+			if (checkoutFormGifts.length > 0) {
+				let isSubmitButtonActivated = false
+
+				checkoutFormGifts.forEach((form) => {
+					const input = form.querySelector('input')
+					const submit = form.querySelector('button[type="submit"]')
+
+					if (submit) {
+						submit.addEventListener('click', (event) => {
+
+							if (!isSubmitButtonActivated && input && input.required && input.value.trim() === '') {
+								event.preventDefault();
+								input.classList.add('is-error');
+
+								input.addEventListener('input', () => {
+									if (input.classList.contains('is-error')) {
+										input.classList.remove('is-error');
+									}
+								});
+
+								return;
+							}
+
+							event.preventDefault();
+
+							if (!isSubmitButtonActivated) {
+								isSubmitButtonActivated = true
+								submit.classList.add('is-active');
+								setTimeout(() => {
+									submit.textContent = 'successful';
+
+									if (input) {
+										const successPlaceholder = input.dataset.successPlaceholder;
+
+										if (successPlaceholder) {
+											input.value = '';
+											input.readOnly = true;
+											input.placeholder = successPlaceholder;
+										}
+									}
+
+									closeCollapse.forEach((closes) => {
+										const isFalse = closes.getAttribute('data-close-collapse') === 'false'
+					
+										if (isFalse) {
+											closes.setAttribute('data-close-collapse', 'true')
+										}
+									})
+								}, 1000);
+							}
+						});
+					}
+				})
+			}
+
+			//** (Start) Checkout Step Close Collapse **//
+			const closeCollapse = complete.querySelectorAll('[data-close-collapse]')
+			if (closeCollapse.length > 0) {
+				closeCollapse.forEach((closes) => {
+					const btn = closes.querySelector('button')
+
+					if (btn) {
+						btn.addEventListener('click', () => {
+							if (isCompleted) {
+								complete.setAttribute('data-complete-collapse', isCompleted)
+							}
+						})
+					}
+				})
+			}
+			//** (End) Checkout Step Close Collapse **//
+			
+			//** (End) Checkout Step Gift Card **//
 		})
 	}
 	//** (End) Checkout Step Collapse Open Button **//
@@ -127,38 +222,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	//** (Start) Checkout Step Shipping Method **//
 
-	//** (Start) Checkout Step Gift Card **//
-	const checkoutFormGifts = document.querySelectorAll('.checkout-form-gift')
-
-	if (checkoutFormGifts.length > 0) {
-		checkoutFormGifts.forEach((form) => {
-			const input = form.querySelector('input')
-			const submit = form.querySelector('button[type="submit"]')
-
-			if (submit) {
-				submit.addEventListener('click', (event) => {
-					event.preventDefault();
-		
-					submit.classList.add('is-active');
-					setTimeout(() => {
-						submit.textContent = 'successful';
-
-						if (input) {
-							const successPlaceholder = input.dataset.successPlaceholder;
-					
-							if (successPlaceholder) {
-								input.value = '';
-								input.readOnly = true;
-								input.placeholder = successPlaceholder;
-							}
-						}
-					}, 1000);
-				});
-			}
-		})
-	}
-	//** (End) Checkout Step Gift Card **//
-
 	//** (Start) Checkout Payment Buttons **//
 	const paymentButtons = document.querySelectorAll('.btn-payment-method')
 	const targetCollapse = document.querySelectorAll('[data-target-collapse]')
@@ -171,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				targetCollapse.forEach((collapse) => {
 					let targetID = collapse.getAttribute('data-target-collapse');
 					let contentCollapse = collapse.getAttribute('data-content-collapse');
-	
+
 					if (targetID === getID) {
 						if (contentCollapse === 'true') {
 							button.classList.add('is-active');
@@ -181,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					button.addEventListener('click', () => {
 						targetID = collapse.getAttribute('data-target-collapse');
 						contentCollapse = collapse.getAttribute('data-content-collapse');
-	
+
 						if (targetID === getID) {
 							if (contentCollapse === 'false') {
 								targetCollapse.forEach((otherCollapse) => {

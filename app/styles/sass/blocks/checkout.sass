@@ -13,6 +13,23 @@
 	& > .container
 		grid-template-columns: 1fr 300px
 
+	.checkout-inner
+		padding-left: 36px
+		position: relative
+
+		&::after
+			content: ''
+			display: block
+			width: 20px
+			height: 20px
+			background-image: url(../images/icons/check-solid.svg)
+			background-repeat: no-repeat
+			background-position: center
+			background-size: contain
+			position: absolute
+			top: 0
+			left: 0
+
 	.list
 		font-weight: 300
 		margin-top: 48px
@@ -56,11 +73,11 @@
 			content: ''
 			width: 2px
 			position: absolute
-			top: 24px
+			top: 20px
 			left: 9px
 
 		&::before
-			height: 100%
+			height: calc( 100% + 10px )
 			background-color: var(--gray-color)
 
 		&::after
@@ -102,11 +119,11 @@
 	0%
 		height: 0
 	100%
-		height: 100%
+		height: calc( 100% + 10px )
 
 @keyframes lineEnd
 	0%
-		height: 100%
+		height: calc( 100% + 10px )
 	100%
 		height: 0
 
@@ -315,6 +332,9 @@
 	display: flex
 	align-items: flex-start
 	justify-content: space-between
+
+[data-close-collapse="false"]
+	display: none
 
 .checkout-signin-start,
 .checkout-signin-end

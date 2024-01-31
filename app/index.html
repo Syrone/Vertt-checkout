@@ -12,6 +12,12 @@
 		<div class="checkout">
 			<div class="container wr">
 				<div class="checkout-inner">
+					<!-- 
+						Если data-step-collapse="false" тогда закрытый и неактивный блок
+						Если data-step-collapse="true" тогда открытый блок и нужно заполнить форму
+						Если data-complete-collapse="false" тогда открытый блок и в ожидании заполнения формы
+						Если data-complete-collapse="true" тогда закрывается блок когда нажали 'apply' и форма верно заполнена
+					-->
 					<div class="checkout-step" data-step-collapse="true" data-complete-collapse="false">
 						<span class="checkout-step-current">
 							1
@@ -28,160 +34,162 @@
 									*Required fields
 								</span>
 							</div>
-							<div class="checkout-step-content" data-content-collapse="true">
-								<div class="checkout-subtitle">
-									<p>
-										Please enter your information to continue as a new client or sing in to your personal account.
-									</p>
-									<span class="required">
-										*Required fields
-									</span>
+							<div data-content-collapse="true">
+								<div class="checkout-step-content" data-content-collapse="false">
+									<div class="checkout-subtitle">
+										<p>
+											Please enter your information to continue as a new client or sing in to your personal account.
+										</p>
+										<span class="required">
+											*Required fields
+										</span>
+									</div>
+									<form class="checkout-form">
+										<div class="checkout-signin-start">
+											<input type="email" name="email" class="field" placeholder="Enter your email *" required>
+											<input type="password" name="password" class="field" placeholder="Enter password *" required>
+	
+											<div class="checkout-step-end">
+												<label class="checkbox-label">
+													<input type="checkbox" name="checkbox" class="checkbox">
+													<span class="checkbox-label-text">Remember Me</span>
+												</label>
+	
+												<span class="hint">
+													Forgot your <a href="#" class="btn btn-link">password</a>?
+												</span>
+											</div>
+										</div>
+	
+										<div class="checkout-signin-end">
+											<button type="submit" class="btn btn-primary">
+												Sign in
+											</button>
+											<button type="button" class="btn btn-apple">
+												<span class="icon">
+													<svg>
+														<use xlink:href="./images/icons/apple.svg#svg-apple"></use>
+													</svg>
+												</span>
+												Sign in with Apple
+											</button>
+	
+											<div class="checkout-step-end">
+												<span class="hint">
+													No <a href="#" class="btn btn-link">account</a> yet?
+												</span>
+											</div>
+										</div>
+									</form>
 								</div>
-								<form class="checkout-form">
-									<div class="checkout-signin-start">
-										<input type="email" name="email" class="field" placeholder="Enter your email *" required>
-										<input type="password" name="password" class="field" placeholder="Enter password *" required>
-
+	
+								<div class="checkout-step-content" data-content-collapse="false">
+									<div class="checkout-subtitle">
+										<p>
+											Hello, you are now logged in as <span>alex@gmail.com</span>
+										</p>
+										<span class="required">
+											*Required fields
+										</span>
+									</div>
+	
+									<form class="checkout-form">
+										<div class="checkout-form-header">
+											<h3 class="checkout-title">
+												Date of Birth
+											</h3>
+											<div class="checkout-subtitle">
+												<p>
+													Please see your date of Birth. We will send a special gift on your birthday.
+												</p>
+											</div>
+										</div>
+	
+										<div class="checkout-select-start">
+											<div class="wrapper-select">
+												<select name="month" class="field-select" required>
+													<option value="">Month</option>
+													<option value="1">Sep</option>
+													<option value="2">Oct</option>
+													<option value="3">Nov</option>
+												</select>
+											</div>
+											<div class="wrapper-select">
+												<select name="day" class="field-select" required>
+													<option value="">Day</option>
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+												</select>
+											</div>
+											<div class="wrapper-select">
+												<select name="year" class="field-select" required>
+													<option value="">Year</option>
+													<option value="1">2000</option>
+													<option value="2">2001</option>
+													<option value="3">2002</option>
+												</select>
+											</div>
+										</div>
+	
+										<div class="checkout-select-end">
+											<div class="wrapper-select">
+												<select name="gender" class="field-select" required>
+													<option value="">Gender</option>
+													<option value="1">Male</option>
+													<option value="2">Female</option>
+													<option value="3">Non-binary</option>
+												</select>
+											</div>
+										</div>
+	
 										<div class="checkout-step-end">
 											<label class="checkbox-label">
 												<input type="checkbox" name="checkbox" class="checkbox">
-												<span class="checkbox-label-text">Remember Me</span>
+												<span class="checkbox-label-text">I wish to receive news.</span>
 											</label>
-
-											<span class="hint">
-												Forgot your <a href="#" class="btn btn-link">password</a>?
-											</span>
+	
+											<button type="submit" class="btn btn-primary">
+												Apply
+											</button>
 										</div>
-									</div>
-
-									<div class="checkout-signin-end">
-										<button type="submit" class="btn btn-primary">
-											Sign in
-										</button>
-										<button type="button" class="btn btn-apple">
-											<span class="icon">
-												<svg>
-													<use xlink:href="./images/icons/apple.svg#svg-apple"></use>
-												</svg>
-											</span>
-											Sign in with Apple
-										</button>
-
-										<div class="checkout-step-end">
-											<span class="hint">
-												No <a href="#" class="btn btn-link">account</a> yet?
-											</span>
-										</div>
-									</div>
-								</form>
-							</div>
-
-							<div class="checkout-step-content" data-content-collapse="true">
-								<div class="checkout-subtitle">
-									<p>
-										Hello, you are now logged in as <span>alex@gmail.com</span>
-									</p>
-									<span class="required">
-										*Required fields
-									</span>
+									</form>
 								</div>
-
-								<form class="checkout-form">
-									<div class="checkout-form-header">
-										<h3 class="checkout-title">
-											Date of Birth
-										</h3>
-										<div class="checkout-subtitle">
-											<p>
-												Please see your date of Birth. We will send a special gift on your birthday.
-											</p>
-										</div>
-									</div>
-
-									<div class="checkout-select-start">
-										<div class="wrapper-select">
-											<select name="month" class="field-select" required>
-												<option value="">Month</option>
-												<option value="1">Sep</option>
-												<option value="2">Oct</option>
-												<option value="3">Nov</option>
-											</select>
-										</div>
-										<div class="wrapper-select">
-											<select name="day" class="field-select" required>
-												<option value="">Day</option>
-												<option value="1">1</option>
-												<option value="2">2</option>
-												<option value="3">3</option>
-											</select>
-										</div>
-										<div class="wrapper-select">
-											<select name="year" class="field-select" required>
-												<option value="">Year</option>
-												<option value="1">2000</option>
-												<option value="2">2001</option>
-												<option value="3">2002</option>
-											</select>
-										</div>
-									</div>
-
-									<div class="checkout-select-end">
-										<div class="wrapper-select">
-											<select name="gender" class="field-select" required>
-												<option value="">Gender</option>
-												<option value="1">Male</option>
-												<option value="2">Female</option>
-												<option value="3">Non-binary</option>
-											</select>
-										</div>
-									</div>
-
-									<div class="checkout-step-end">
-										<label class="checkbox-label">
-											<input type="checkbox" name="checkbox" class="checkbox">
-											<span class="checkbox-label-text">I wish to receive news.</span>
-										</label>
-
-										<button type="submit" class="btn btn-primary">
-											Apply
-										</button>
-									</div>
-								</form>
-							</div>
-
-							<div class="checkout-step-content" data-content-collapse="true">
-								<div class="checkout-subtitle">
-									<p>
-										Hello, you are now logged in as <span>alex@gmail.com</span>
-									</p>
-									<span class="required">
-										*Required fields
-									</span>
-								</div>
-								<div class="checkout-info">
-									<div class="checkout-info-start">
-										<h3 class="checkout-title">
-											Date of Birth
-										</h3>
-										<div class="checkout-subtitle">
-											<p>
-												You filled in your birthday: <span>XX/XX/XXXX</span>. We will send a special gift on your
-												birthday.
-											</p>
-
-											<button type="button" class="btn btn-link">Edit</button>
-										</div>
-									</div>
-
-									<div class="checkout-step-end">
-										<label class="checkbox-label">
-											<input type="checkbox" name="checkbox" class="checkbox">
-											<span class="checkbox-label-text">I wish to receive news.</span>
-										</label>
-
-										<span class="hint">
-											I have <a href="#" class="btn btn-link">completed</a>
+	
+								<div class="checkout-step-content" data-content-collapse="true">
+									<div class="checkout-subtitle">
+										<p>
+											Hello, you are now logged in as <span>alex@gmail.com</span>
+										</p>
+										<span class="required">
+											*Required fields
 										</span>
+									</div>
+									<div class="checkout-info">
+										<div class="checkout-info-start">
+											<h3 class="checkout-title">
+												Date of Birth
+											</h3>
+											<div class="checkout-subtitle">
+												<p>
+													You filled in your birthday: <span>XX/XX/XXXX</span>. We will send a special gift on your
+													birthday.
+												</p>
+	
+												<button type="button" class="btn btn-link">Edit</button>
+											</div>
+										</div>
+	
+										<div class="checkout-step-end">
+											<label class="checkbox-label">
+												<input type="checkbox" name="checkbox" class="checkbox">
+												<span class="checkbox-label-text">I wish to receive news.</span>
+											</label>
+	
+											<span class="hint">
+												I have <a href="#" class="btn btn-link">completed</a>
+											</span>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -399,7 +407,7 @@
 								</p>
 							</div>
 							<div class="checkout-step-content checkout-step-gift" data-content-collapse="false">
-								<form class="checkout-form checkout-form-gift">
+								<form class="checkout-form" data-form-gift="false">
 									<div class="checkout-form-header">
 										<div class="checkout-subtitle">
 											<p>
@@ -413,7 +421,7 @@
 										Apply
 									</button>
 								</form>
-								<form class="checkout-form checkout-form-gift">
+								<form class="checkout-form" data-form-gift="false">
 									<div class="checkout-form-header">
 										<div class="checkout-subtitle">
 											<p>
@@ -428,7 +436,7 @@
 										Apply
 									</button>
 								</form>
-								<form class="checkout-form checkout-form-points checkout-form-gift">
+								<form class="checkout-form checkout-form-points" data-form-gift="false">
 									<div class="checkout-gift-header">
 										<h2 class="checkout-title">
 											You have <span>XX</span> Points.
@@ -445,12 +453,12 @@
 								</form>
 
 								<div class="checkout-gift-hint">
-									<p class="hint">
-										I <a href="#" class="btn btn-link">don't have</a> code.
+									<p class="hint" data-close-collapse="true">
+										I <button type="button" class="btn btn-link">don't have</button> code.
 									</p>
 
-									<p class="hint">
-										I have <a href="#" class="btn btn-link">completed</a>.
+									<p class="hint" data-close-collapse="false">
+										I have <button type="button" class="btn btn-link">completed</button>.
 									</p>
 								</div>
 							</div>
@@ -510,8 +518,22 @@
 											</svg>
 										</span>
 									</button>
+									<button type="button" id="venmoCollapse" class="btn btn-primary btn-payment-method">
+										<span class="icon">
+											<svg>
+												<use xlink:href="./images/icons/venmo-text.svg#svg-venmo-text"></use>
+											</svg>
+										</span>
+									</button>
+									<button type="button" id="coinbaseCollapse" class="btn btn-primary btn-payment-method">
+										<span class="icon">
+											<svg>
+												<use xlink:href="./images/icons/coinbase-text.svg#svg-coinbase-text"></use>
+											</svg>
+										</span>
+									</button>
 
-									<div class="checkout-form--payment" data-target-collapse="afterpayCollapse" data-content-collapse="true">
+									<div class="checkout-form--payment" data-target-collapse="afterpayCollapse" data-content-collapse="false">
 										<ul class="list">
 											<li>
 												<span class="icon">
@@ -553,12 +575,26 @@
 											</p>
 										</div>
 									</div>
+									<div class="checkout-form--payment" data-target-collapse="venmoCollapse" data-content-collapse="false">
+										<div class="checkout-step-end">
+											<p class="hint">
+												You will login on Venmo's site on the next page and review your order, then you will finish your transaction on verr.shop.
+											</p>
+										</div>
+									</div>
+									<div class="checkout-form--payment" data-target-collapse="coinbaseCollapse" data-content-collapse="false">
+										<div class="checkout-step-end">
+											<p class="hint">
+												You will login on Coinbase's site on the next page and review your order, then you will finish your transaction on verr.shop.
+											</p>
+										</div>
+									</div>
 
 									<div class="checkout-payment-hint">
 										<p class="hint">
 											Pay for your order uses a secure method. We use 256-bit encryption - a higher security standrard
-											that many banks. Before continuing, please make sure your browser settings are set to 'Allow: The
-											site can display pop-up windows'. Check instructions for <a href="#" class="btn btn-link">Safari</a> or <a href="#" class="btn btn-link">Chrome</a>.
+											that many banks. Before continuing, please make sure your browser settings are set to "Allow: The
+											site can display pop-up windows". Check instructions for <a href="#" class="btn btn-link">Safari</a> or <a href="#" class="btn btn-link">Chrome</a>.
 										</p>
 									</div>
 								</form>
