@@ -1186,6 +1186,11 @@
     -ms-flex-preferred-size: calc(50% - 12px);
         flex-basis: calc(50% - 12px);
   }
+  .checkout-order {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
   .checkout-info-start p {
     max-width: initial;
   }
